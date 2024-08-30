@@ -1,65 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-  	<meta charset="utf-8">
-  	<meta name="description" content="Your description goes here">
-  	<meta name="keywords" content="one, two, three">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>Blank Template</title>
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<header id="header">
-			<h1 id="Title">Daily HwaToo Jum</h1>
-			<h3 id="date"></h3>
-		</header>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Your description goes here">
+	<meta name="keywords" content="one, two, three">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Hwatu</title>
+
+	<!-- external CSS link -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header id="header">
+		<h1 id="titleOne">화투점</h1>
+		<h1 id="titleTwo">Hwatu Tarot</h1>
+		<!--<h3 id="date"></h3>-->
+	</header>
+	<div id="pileSpreadContainer">
 		<div id="pilesContainer">
-			<div id="pileA" class="outline"></div>
-			<div id="pileB" class="outline"></div>
-			<div id="pileC" class="outline"></div>
-			<div id="pileD" class="outline"></div>
+			<div id="pileA" class="pileClass"></div>
+			<div id="pileB" class="pileClass"></div>
+			<div id="pileC" class="pileClass"></div>
+			<div id="pileD" class="pileClass"></div>
 		</div>
 		<div id="spreadContainer">
-			<div id="stackA">
-				<div id="a1" class="outline"></div>
-				<div id="a2" class="outline"></div>
-				<div id="a3" class="outline"></div>
-				<div id="a4" class="outline"></div>
-				<div id="a5" class="outline"></div>
+			<div id="spreadA" class="columnClass">
+
 			</div>
-			<div id="stackB">
-				<div id="b1" class="outline"></div>
-				<div id="b2" class="outline"></div>
-				<div id="b3" class="outline"></div>
-				<div id="b4" class="outline"></div>
-				<div id="b5" class="outline"></div>
+			<div id="spreadB" class="columnClass">
+
 			</div>
-			<div id="stackC">
-				<div id="c1" class="outline"></div>
-				<div id="c2" class="outline"></div>
-				<div id="c3" class="outline"></div>
-				<div id="c4" class="outline"></div>
-				<div id="c5" class="outline"></div>
+			<div id="spreadC" class="columnClass">
+
 			</div>
-			<div id="stackD">
-				<div id="d1" class="outline"></div>
-				<div id="d2" class="outline"></div>
-				<div id="d3" class="outline"></div>
-				<div id="d4" class="outline"></div>
-				<div id="d5" class="outline"></div>
+			<div id="spreadD" class="columnClass">
+
 			</div>
 		</div>
-		<div id="handContainer">
-			<div id="faceDown" class="outline"></div>
-			<div id="visibleHandContainer"></div>
+	</div>
+	<div id="handContainer">
+		<div id="leftBox">
+			<div id="facedown" class="outline"></div>
+			<div id="infoResetDiv">
+				<img id="resetButton" src="../images/reset.png"></img>
+				<img id="infoButton" src="../images/info.png"></img>
+			</div>
 		</div>
-		<div id="resultContainer">
-			
+		<div id="rightBox">
+			<div id="visibleHandContainer">
+			</div>
 		</div>
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
+	</div>
+	<div id="endingOverlay">
+		<div id="resultBox">
+			<h2 id="resultTitle">Results</h2>
+			<div id="resultCardsDiv">
+				<div class="pileResultRows" id="pileAImgDiv"></div>
+				<div class="pileResultRows" id="pileBImgDiv"></div>
+				<div class="pileResultRows" id="pileCImgDiv"></div>
+				<div class="pileResultRows" id="pileDImgDiv"></div>
+			</div>
+			<div class="monthsDiv" id="resultMonthsDiv">
+
+			</div>
+			<button id="resultCloseButton">Play Again</button>
+		</div>
+	</div>
+	<div id="infoOverlay">
+		<div id="infoBox">
+			<h2 id="infoTitle">Guide</h2>
+			<div id="instructionDiv">
+				<h4 class="instructions">Hwatu card deck has 48 cards. There are 12 kinds corresponding to the months of
+					the year with each kind having 4 cards. Each kind has a meaning similar to tarot.</h4>
+				<h4 class="instructions">Match the cards into pairs of the same kind until all 48 cards are placed into
+					the four piles above the spread. If all 4 cards of a kind are in the same pile, that kind is your
+					fortune for the day.</h4>
+				<h4 class="instructions">Like you would in a game of Solitaire, click the face-down card to pull out a
+					card. Deck will be cycled until empty. Unclickable cards will be greyed out. Click on the pile at
+					the end to see the result. If the spread is impossible to empty, simply reset and try again.</h4>
+			</div>
+			<div class="monthsDiv">
+				<div class="monthRow" id="jan">
+					<img class="monthImg" src="images/jan.png">
+					<div class="monthInfo">
+						<span class="monthTitle">January | Pine 솔</span>
+						<span class="monthMeaning">Receive news or tidings</span>
+					</div>
+				</div>
+				<div class="monthRow" id="feb">
+					<img class="monthImg" src="images/feb.png">
+					<div class="monthInfo">
+						<span class="monthTitle">February | Plum Blossom 매화</span>
+						<span class="monthMeaning">Meet your beloved</span>
+					</div>
+				</div>
+				<div class="monthRow" id="mar">
+					<img class="monthImg" src="images/mar.png">
+					<div class="monthInfo">
+						<span class="monthTitle">March | Cherry Blossom 벚꽃</span>
+						<span class="monthMeaning">Set out on a brief journey</span>
+					</div>
+				</div>
+				<div class="monthRow" id="apr">
+					<img class="monthImg" src="images/apr.png">
+					<div class="monthInfo">
+						<span class="monthTitle">April | Wisteria 흑싸리</span>
+						<span class="monthMeaning">Experience a minor conflict</span>
+					</div>
+				</div>
+				<div class="monthRow" id="may">
+					<img class="monthImg" src="images/may.png">
+					<div class="monthInfo">
+						<span class="monthTitle">May | Iris 난초</span>
+						<span class="monthMeaning">Dine out or meet with someone</span>
+					</div>
+				</div>
+				<div class="monthRow" id="jun">
+					<img class="monthImg" src="images/jun.png">
+					<div class="monthInfo">
+						<span class="monthTitle">June | Peony 목단</span>
+						<span class="monthMeaning">Welcome a happy occasion</span>
+					</div>
+				</div>
+				<div class="monthRow" id="jul">
+					<img class="monthImg" src="images/jul.png">
+					<div class="monthInfo">
+						<span class="monthTitle">July | Bush Clover 홍싸리</span>
+						<span class="monthMeaning">Stumble upon an unexpected windfall</span>
+					</div>
+				</div>
+				<div class="monthRow" id="aug">
+					<img class="monthImg" src="images/aug.png">
+					<div class="monthInfo">
+						<span class="monthTitle">August | Empty Hill 공산</span>
+						<span class="monthMeaning">Acquire money</span>
+					</div>
+				</div>
+				<div class="monthRow" id="sep">
+					<img class="monthImg" src="images/sep.png">
+					<div class="monthInfo">
+						<span class="monthTitle">September | Chrysanthemum 국화</span>
+						<span class="monthMeaning">Encounter an occasion for a drink</span>
+					</div>
+				</div>
+				<div class="monthRow" id="oct">
+					<img class="monthImg" src="images/oct.png">
+					<div class="monthInfo">
+						<span class="monthTitle">October | Maple 단풍</span>
+						<span class="monthMeaning">Face worries or concerns</span>
+					</div>
+				</div>
+				<div class="monthRow" id="nov">
+					<img class="monthImg" src="images/nov.png">
+					<div class="monthInfo">
+						<span class="monthTitle">November | Paulownia 오동</span>
+						<span class="monthMeaning">Spend money or come across an expense</span>
+					</div>
+				</div>
+				<div class="monthRow" id="dec">
+					<img class="monthImg" src="images/dec.png">
+					<div class="monthInfo">
+						<span class="monthTitle">December | Rain 비</span>
+						<span class="monthMeaning">Have a visitor</span>
+					</div>
+				</div>
+			</div>
+			<button id="infoCloseButton">Close</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>

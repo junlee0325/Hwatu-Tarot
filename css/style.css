@@ -5,62 +5,459 @@
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
 /* BASE STYLES
 /*******************************************/
 
-body {
-background-color: green;
-clear: both;
-}
-
-
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-
 }
 
 footer {
-
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 
+/*******************************************/
+/* MOBILE FIRST */
+/*******************************************/
+
+/* Basics */
 img {
-  box-shadow: 2px 2px black;
-  width: 100%;
+  width: 58px;
   aspect-ratio: 230/360;
 }
 
-.outline {
-  border: 1px rgba(255, 255, 255, 0.7) solid;
-  border-radius: 5%;
-  width: 23%;
-  aspect-ratio: 230/345;
+body {
+  background-color: rgb(0, 0, 0);
+  background-image: url("../images/gung2.png");
+  background-size: fill;
+  clear: both;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1%;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
 }
 
+
+/* Header */
+header {
+  margin: 15px;
+}
+
+#titleOne {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 4px 6px black;
+  font-size: 30px;
+  margin: 0;
+}
+
+#titleTwo {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 4px 6px black;
+  font-size: 40px;
+  margin: 0;
+  text-decoration: underline;
+}
+
+#date {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0.5px black;
+  margin: 2vw;
+}
+
+/* Piles and Spread */
+#pileSpreadContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;  
+}
+
+/* Piles */
 #pilesContainer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  border-bottom: 2px rgb(255, 255, 255) solid;
+  box-shadow: 0 3px 2px -2px rgb(0, 0, 0);
+  padding-bottom: 15px;
+  margin: 0 10px 0 10px;
+}
+
+.pileClass {
+  box-shadow: 0 0 3px 1px white;
+  border-radius: 5%;
+  width: 45px;
+  aspect-ratio: 230/345;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+
+.pileImg {
+  width: 100%;
+  aspect-ratio: 230/360;
+}
+
+/* Spread */
+#spreadContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.columnClass {
+  width: 25%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 200px;
+}
+
+.spreadRow1 {
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  background-image: url("../images/back.png");
+  background-size: cover;
+  width: 58px;
+  aspect-ratio: 230/360;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+.spreadRow2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -65px;
+  background-image: url("../images/back.png");
+  background-size: cover;
+  width: 58px;
+  aspect-ratio: 230/360;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+.spreadRow3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -130px;
+  background-image: url("../images/back.png");
+  background-size: cover;
+  width: 58px;
+  aspect-ratio: 230/360;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+.spreadRow4 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -195px;
+  background-image: url("../images/back.png");
+  background-size: cover;
+  width: 58px;
+  aspect-ratio: 230/360;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+.spreadRow5 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -260px;
+  background-image: url("../images/back.png");
+  background-size: cover;
+  width: 58px;
+  aspect-ratio: 230/360;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+
+/* Hand and Buttons */
+#handContainer {
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  overflow: auto;
+}
+
+/* Left Box */
+#leftBox {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0;
+  width: 20%;
+}
+
+#facedown {
+  width: 58px;
+  aspect-ratio: 230/360;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  position: fixed;
+  margin-top: 15px;
+}
+
+#infoResetDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 10px;
+}
+
+#resetButton {
+  width: 58px;
+  aspect-ratio: 1/1;
+  border: none;
+  margin: 10px 0;
+}
+
+#infoButton {
+  width: 58px;
+  aspect-ratio: 1/1;
+  border: none;
+  margin: 10px 0;
+}
+
+/* Right Box */
+#rightBox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 80%
+}
+
+#visibleHandContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 15px 0;
+}
+
+.handCards {
+  width: 58px;
+  aspect-ratio: 230/360;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+
+/* Results */
+#endingOverlay {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none /*change to none later */;
+  justify-content: center;
+  align-items: center;
+}
+
+#resultBox {
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
+  border-radius: 20px;
+}
+
+#resultTitle {
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 25px;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px rgb(119, 119, 119);
+}
+
+#resultCardsDiv {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.pileResultRows {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(6, 1fr); /* 2 rows of 150px height */
+  box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
+  padding: 0;
+  margin: 2%;
+  width: 20%;
+}
+
+.resultCardClass {
+  width: 100%;
+  aspect-ratio: 230/360;
+  padding: 0px;
+}
+
+.monthsDiv {
+  min-height: 260px;
+  overflow: auto;
+}
+
+#resultCloseButton {
+  background-color: rgb(9, 63, 16);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  width: 80px;
+  aspect-ratio: 9/6;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Info */
+#infoOverlay {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none /*change to none later */;
+  justify-content: center;
+  align-items: center;
+}
+
+#infoBox {
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
+  border-radius: 20px;
+}
+
+#infoTitle {
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 25px;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px rgb(119, 119, 119);
+}
+
+#instructionDiv {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.instructions {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.monthsDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-shadow: 0 0 1px 1px grey;
+  border-radius: 20px;
+  overflow: auto;
+  margin: 0 10px 15px 10px;
+  padding: 5px;
+}
+
+.monthRow {
+  display: grid;
+  grid-template-columns: repeat(100, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(1, 1fr); /* 2 rows of 150px height */
+  width: 100%;
+  padding: 5px 2px;
+  border-bottom: 1px black solid;
+  align-items: center;
+}
+
+.monthImg {
+  width: 100%;
+  aspect-ratio: 920/360;
+  padding: 2px 5px;
+  grid-column-start: 1;
+  grid-column-end: 40;
+}
+
+.monthInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 2px 5px;
+  grid-column-start: 40;
+  grid-column-end: 101;
+  font-size: 14px;
+}
+
+.monthMeaning {
+  font-weight: bold;
+}
+
+#infoCloseButton {
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  width: 80px;
+  aspect-ratio: 9/6;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.greyed {
+  opacity: 50%;
+}
+
+.glowing {
+  box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+  z-index: 3;
 }
