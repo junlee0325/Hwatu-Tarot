@@ -35,429 +35,1331 @@ footer {
 /*******************************************/
 
 /*******************************************/
-/* MOBILE FIRST */
+/* MOBILE */
 /*******************************************/
+@media (width <= 600px) {
+  /* Basics */
+  img {
+    width: 58px;
+    aspect-ratio: 230/360;
+  }
 
-/* Basics */
-img {
-  width: 58px;
-  aspect-ratio: 230/360;
+  body {
+    background-color: rgb(0, 0, 0);
+    background-image: url("../images/gung3.png");
+    background-size: fill;
+    clear: both;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+  }
+
+  /* Header */
+  header {
+    margin: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
+  #titleOne {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 4px 6px black;
+    font-size: 30px;
+    margin: 0;
+  }
+
+  #titleTwo {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 4px 6px black;
+    font-size: 40px;
+    margin: 0;
+    text-decoration: underline;
+  }
+
+  #date {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 0.5px black;
+    margin: 2vw;
+  }
+
+  /* Piles and Spread */
+  #pileSpreadContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  /* Piles */
+  #pilesContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    box-shadow: 0 3px 2px -2px rgb(0, 0, 0);
+    padding-bottom: 15px;
+    margin: 0 10px 0 10px;
+  }
+
+  .pileClass {
+    box-shadow: 0 0 3px 1px white;
+    border-radius: 5%;
+    width: 45px;
+    aspect-ratio: 230/345;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+
+  .pileImg {
+    width: 100%;
+    aspect-ratio: 230/360;
+  }
+
+  /* Spread */
+  #spreadContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .columnClass {
+    width: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 200px;
+  }
+
+  .spreadRow1 {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 58px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+  }
+  .spreadRow2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -65px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 58px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+  }
+  .spreadRow3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -130px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 58px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+  }
+  .spreadRow4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -195px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 58px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+  }
+  .spreadRow5 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -260px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 58px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+  }
+
+  /* Hand and Buttons */
+  #handContainer {
+    margin: 0 0;
+    padding: 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  /* Left Box */
+  #leftBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0;
+    width: 20%;
+    height: 200px;
+  }
+
+  #facedown {
+    width: 58px;
+    aspect-ratio: 230/360;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    margin-top: 15px;
+    z-index: 1;
+  }
+
+  #infoResetDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 10px;
+  }
+
+  #resetButton {
+    width: 58px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  #infoButton {
+    width: 58px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  /* Right Box */
+  #rightBox {
+    width: 80%;
+  }
+
+  #visibleHandContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 15px 0;
+  }
+
+  .handCards {
+    width: 58px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+  }
+
+  /* Results */
+  #endingOverlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none /*change to none later */;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #resultBox {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    border-radius: 20px;
+  }
+
+  #resultTitle {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(119, 119, 119);
+  }
+
+  #resultCardsDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 0;
+  }
+
+  .pileResultRows {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(6, 1fr); 
+    box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
+    padding: 0;
+    margin: 2%;
+    width: 20%;
+  }
+
+  .resultCardClass {
+    width: 100%;
+    aspect-ratio: 230/360;
+    padding: 0px;
+  }
+
+  .monthsDiv {
+    min-height: 260px;
+    overflow: auto;
+  }
+
+  #resultCloseButton {
+    background-color: rgb(9, 63, 16);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 80px;
+    aspect-ratio: 9/6;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* Info */
+  #infoOverlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none /*change to none later */;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #infoBox {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    border-radius: 20px;
+  }
+
+  #infoTitle {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(119, 119, 119);
+  }
+
+  #instructionDiv {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 10px;
+  }
+
+  .instructions {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+  }
+
+  .monthsDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    box-shadow: 0 0 1px 1px grey;
+    border-radius: 20px;
+    overflow: auto;
+    margin: 0 10px 15px 10px;
+    padding: 5px;
+  }
+
+  .monthRow {
+    display: grid;
+    grid-template-columns: repeat(100, 1fr); 
+    grid-template-rows: repeat(1, 1fr); 
+    width: 100%;
+    padding: 5px 2px;
+    border-bottom: 1px black solid;
+    align-items: center;
+  }
+
+  .monthImg {
+    width: 100%;
+    aspect-ratio: 920/360;
+    padding: 2px 5px;
+    grid-column-start: 1;
+    grid-column-end: 40;
+  }
+
+  .monthInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 2px 5px;
+    grid-column-start: 40;
+    grid-column-end: 101;
+    font-size: 14px;
+  }
+
+  .monthMeaning {
+    font-weight: bold;
+  }
+
+  #infoCloseButton {
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 80px;
+    aspect-ratio: 9/6;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .greyed {
+    opacity: 50%;
+  }
+
+  .glowing {
+    box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+    z-index: 3;
+  }
 }
 
-body {
-  background-color: rgb(0, 0, 0);
-  background-image: url("../images/gung2.png");
-  background-size: fill;
-  clear: both;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  font-family: "Gowun Dodum", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  height: 100vh;
+/*******************************************/
+/* TABLET */
+/*******************************************/
+@media (600px < width <= 1024px) {
+  /* Basics */
+  img {
+    width: 80px;
+    aspect-ratio: 230/360;
+  }
+
+  body {
+    background-color: rgb(0, 0, 0);
+    background-image: url("../images/gung3.png");
+    background-size: fill;
+    clear: both;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+  }
+
+  /* Header */
+  header {
+    margin: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
+  #titleOne {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 6px 5px black;
+    font-size: 35px;
+    margin: 0;
+  }
+
+  #titleTwo {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 6px 5px black;
+    font-size: 40px;
+    margin: 0;
+    text-decoration: underline;
+  }
+
+  #date {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 0.5px black;
+    margin: 2vw;
+  }
+
+  /* Piles and Spread */
+  #pileSpreadContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  /* Piles */
+  #pilesContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    box-shadow: 0 3px 2px -2px rgb(0, 0, 0);
+    padding-bottom: 15px;
+    margin: 0 20px 0 20px;
+  }
+
+  .pileClass {
+    box-shadow: 0 0 3px 1px white;
+    border-radius: 5%;
+    width: 50px;
+    aspect-ratio: 230/345;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
+
+  .pileImg {
+    width: 100%;
+    aspect-ratio: 230/360;
+  }
+
+  /* Spread */
+  #spreadContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .columnClass {
+    width: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 270px;
+  }
+
+  .spreadRow1 {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 80px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -90px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 80px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -180px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 80px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -270px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 80px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow5 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -360px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 80px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  /* Hand and Buttons */
+  #handContainer {
+    margin: 0 0;
+    padding: 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  /* Left Box */
+  #leftBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0;
+    width: 20%;
+    height: 200px;
+  }
+
+  #facedown {
+    width: 80px;
+    aspect-ratio: 230/360;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    margin-top: 15px;
+    z-index: 1;
+  }
+
+  #infoResetDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 20px;
+  }
+
+  #resetButton {
+    width: 60px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  #infoButton {
+    width: 60px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  /* Right Box */
+  #rightBox {
+    width: 80%;
+  }
+
+  #visibleHandContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 15px 0;
+  }
+
+  .handCards {
+    width: 80px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  /* Results */
+  #endingOverlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none /*change to none later */;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #resultBox {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 30px;
+  }
+
+  #resultTitle {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(119, 119, 119);
+  }
+
+  #resultCardsDiv {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .pileResultRows {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
+    padding: 0;
+    margin: 1%;
+    width: 48%;
+  }
+
+  .resultCardClass {
+    width: 100%;
+    aspect-ratio: 230/360;
+    padding: 0px;
+  }
+
+  .monthsDiv {
+    min-height: 260px;
+    overflow: auto;
+  }
+
+  #resultCloseButton {
+    background-color: rgb(9, 63, 16);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100px;
+    aspect-ratio: 9/6;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* Info */
+  #infoOverlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none /*change to none later */;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #infoBox {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    border-radius: 20px;
+    padding: 0 30px;
+  }
+
+  #infoTitle {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(119, 119, 119);
+  }
+
+  #instructionDiv {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .instructions {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+  }
+
+  .monthsDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    box-shadow: 0 0 2px 2px grey;
+    border-radius: 20px;
+    overflow: auto;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+
+  .monthRow {
+    display: grid;
+    grid-template-columns: repeat(100, 1fr); 
+    grid-template-rows: repeat(1, 1fr); 
+    width: 100%;
+    padding: 5px 2px;
+    border-bottom: 1px black solid;
+    align-items: center;
+  }
+
+  .monthImg {
+    width: 100%;
+    aspect-ratio: 920/360;
+    padding: 2px 5px;
+    grid-column-start: 1;
+    grid-column-end: 50;
+  }
+
+  .monthInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 2px 5px;
+    grid-column-start: 50;
+    grid-column-end: 101;
+    font-size: 20px;
+  }
+
+  .monthMeaning {
+    font-weight: bold;
+  }
+
+  #infoCloseButton {
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    aspect-ratio: 9/6;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .greyed {
+    opacity: 50%;
+  }
+
+  .glowing {
+    box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+    z-index: 3;
+  }
 }
 
+/*******************************************/
+/* Desktop Landscape*/
+/*******************************************/
+@media (1024px < width) {
+  /* Basics */
+  img {
+    width: 100px;
+    aspect-ratio: 230/360;
+  }
 
-/* Header */
-header {
-  margin: 15px;
-}
+  body {
+    background-color: rgb(0, 0, 0);
+    background-image: url("../images/gung3.png");
+    background-size: fill;
+    clear: both;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr); 
+    grid-template-rows: repeat(100, 1fr); 
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+  }
 
-#titleOne {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 4px 6px black;
-  font-size: 30px;
-  margin: 0;
-}
+  /* Header */
+  header {
+    margin: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    grid-column-start: 70;
+    grid-column-end: 101;
+    grid-row-start: 10;
+    grid-row-end: 101;
+    margin: 10px 0 0 0;
+  }
 
-#titleTwo {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 4px 6px black;
-  font-size: 40px;
-  margin: 0;
-  text-decoration: underline;
-}
+  #titleOne {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 6px 5px black;
+    font-size: 100px;
+    margin: 0;
+    writing-mode: vertical-rl;
+  }
 
-#date {
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 0.5px black;
-  margin: 2vw;
-}
+  #titleTwo {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 6px 5px black;
+    font-size: 50px;
+    margin: 0;
+  }
 
-/* Piles and Spread */
-#pileSpreadContainer {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;  
-}
+  #date {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 0.5px black;
+    margin: 2vw;
+  }
 
-/* Piles */
-#pilesContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  border-bottom: 2px rgb(255, 255, 255) solid;
-  box-shadow: 0 3px 2px -2px rgb(0, 0, 0);
-  padding-bottom: 15px;
-  margin: 0 10px 0 10px;
-}
+  /* Piles and Spread */
+  #pileSpreadContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    grid-column-start: 1;
+    grid-column-end: 70;
+    grid-row-start: 1;
+    grid-row-end: 50;
+    margin: 30px 0 0 0;
+  }
 
-.pileClass {
-  box-shadow: 0 0 3px 1px white;
-  border-radius: 5%;
-  width: 45px;
-  aspect-ratio: 230/345;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-}
+  /* Piles */
+  #pilesContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    box-shadow: 0 3px 2px -2px rgb(0, 0, 0);
+    padding-bottom: 15px;
+    margin: 0 20px 0 20px;
+  }
 
-.pileImg {
-  width: 100%;
-  aspect-ratio: 230/360;
-}
+  .pileClass {
+    box-shadow: 0 0 3px 1px white;
+    border-radius: 5%;
+    width: 80px;
+    aspect-ratio: 230/345;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+  }
 
-/* Spread */
-#spreadContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  margin-top: 10px;
-  width: 100%;
-}
+  .pileImg {
+    width: 100%;
+    aspect-ratio: 230/360;
+  }
 
-.columnClass {
-  width: 25%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  height: 200px;
-}
+  /* Spread */
+  #spreadContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+  }
 
-.spreadRow1 {
-  position: static;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0px;
-  background-image: url("../images/back.png");
-  background-size: cover;
-  width: 58px;
-  aspect-ratio: 230/360;
-  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
-}
-.spreadRow2 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: -65px;
-  background-image: url("../images/back.png");
-  background-size: cover;
-  width: 58px;
-  aspect-ratio: 230/360;
-  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
-}
-.spreadRow3 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: -130px;
-  background-image: url("../images/back.png");
-  background-size: cover;
-  width: 58px;
-  aspect-ratio: 230/360;
-  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
-}
-.spreadRow4 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: -195px;
-  background-image: url("../images/back.png");
-  background-size: cover;
-  width: 58px;
-  aspect-ratio: 230/360;
-  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
-}
-.spreadRow5 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: -260px;
-  background-image: url("../images/back.png");
-  background-size: cover;
-  width: 58px;
-  aspect-ratio: 230/360;
-  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
-}
+  .columnClass {
+    width: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 250px;
+  }
 
-/* Hand and Buttons */
-#handContainer {
-  margin: 0 0;
-  padding: 0 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  overflow: auto;
-}
+  .spreadRow1 {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 100px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -130px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 100px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -260px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 100px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -390px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 100px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+  .spreadRow5 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -520px;
+    background-image: url("../images/back.png");
+    background-size: cover;
+    width: 100px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
 
-/* Left Box */
-#leftBox {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0;
-  width: 20%;
-}
+  /* Hand and Buttons */
+  #handContainer {
+    margin: 0 0;
+    padding: 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 70;
+    grid-row-start: 50;
+    grid-row-end: 101;
+    overflow: auto;
+  }
 
-#facedown {
-  width: 58px;
-  aspect-ratio: 230/360;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 0 10px 2px rgb(0, 0, 0);
-  position: fixed;
-  margin-top: 15px;
-}
+  /* Left Box */
+  #leftBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0;
+    width: 15%;
+    height: 100%;
+  }
 
-#infoResetDiv {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  bottom: 10px;
-}
+  #facedown {
+    width: 100px;
+    aspect-ratio: 230/360;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    z-index: 1;
+  }
 
-#resetButton {
-  width: 58px;
-  aspect-ratio: 1/1;
-  border: none;
-  margin: 10px 0;
-}
+  #infoResetDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 20px;
+    margin: 10px 0;
+  }
 
-#infoButton {
-  width: 58px;
-  aspect-ratio: 1/1;
-  border: none;
-  margin: 10px 0;
-}
+  #resetButton {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
 
-/* Right Box */
-#rightBox {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  width: 80%
-}
+  #infoButton {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
 
-#visibleHandContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  padding: 15px 0;
-}
+  /* Right Box */
+  #rightBox {
+    width: 85%;
+  }
 
-.handCards {
-  width: 58px;
-  aspect-ratio: 230/360;
-  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
-}
+  #visibleHandContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
 
-/* Results */
-#endingOverlay {
-  z-index: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  display: none /*change to none later */;
-  justify-content: center;
-  align-items: center;
-}
+  .handCards {
+    width: 100px;
+    aspect-ratio: 230/360;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
 
-#resultBox {
-  width: 90%;
-  height: 90%;
-  background-color: white;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 0;
-  border-radius: 20px;
-}
+  /* Results */
+  #endingOverlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none /*change to none later */;
+    justify-content: center;
+    align-items: center;
+  }
 
-#resultTitle {
-  padding: 0;
-  margin-bottom: 15px;
-  font-size: 25px;
-  text-decoration: underline;
-  text-shadow: 1px 1px 1px rgb(119, 119, 119);
-}
+  #resultBox {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 30px;
+  }
 
-#resultCardsDiv {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  margin: 0 10px;
-  padding: 0;
-}
+  #resultTitle {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(119, 119, 119);
+  }
 
-.pileResultRows {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
-  grid-template-rows: repeat(6, 1fr); /* 2 rows of 150px height */
-  box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
-  padding: 0;
-  margin: 2%;
-  width: 20%;
-}
+  #resultCardsDiv {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0;
+  }
 
-.resultCardClass {
-  width: 100%;
-  aspect-ratio: 230/360;
-  padding: 0px;
-}
+  .pileResultRows {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: repeat(1, 1fr); 
+    box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
+    padding: 0;
+    margin: 1%;
+    width: 48%;
+  }
 
-.monthsDiv {
-  min-height: 260px;
-  overflow: auto;
-}
+  .resultCardClass {
+    width: 100%;
+    aspect-ratio: 230/360;
+    padding: 0px;
+  }
 
-#resultCloseButton {
-  background-color: rgb(9, 63, 16);
-  border: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  width: 80px;
-  aspect-ratio: 9/6;
-  border-radius: 20px;
-  text-align: center;
-  margin-bottom: 15px;
-}
+  .monthsDiv {
+    min-height: 260px;
+    overflow: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 
-/* Info */
-#infoOverlay {
-  z-index: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  display: none /*change to none later */;
-  justify-content: center;
-  align-items: center;
-}
+  #resultCloseButton {
+    background-color: rgb(9, 63, 16);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100px;
+    aspect-ratio: 9/6;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-#infoBox {
-  width: 90%;
-  height: 90%;
-  background-color: white;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 0;
-  border-radius: 20px;
-}
+  /* Info */
+  #infoOverlay {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none /*change to none later */;
+    justify-content: center;
+    align-items: center;
+  }
 
-#infoTitle {
-  padding: 0;
-  margin-bottom: 15px;
-  font-size: 25px;
-  text-decoration: underline;
-  text-shadow: 1px 1px 1px rgb(119, 119, 119);
-}
+  #infoBox {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    border-radius: 20px;
+    padding: 0 30px;
+  }
 
-#instructionDiv {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 10px;
-}
+  #infoTitle {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(119, 119, 119);
+  }
 
-.instructions {
-  margin: 0 0 10px 0;
-  font-size: 14px;
-}
+  #instructionDiv {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-.monthsDiv {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  box-shadow: 0 0 1px 1px grey;
-  border-radius: 20px;
-  overflow: auto;
-  margin: 0 10px 15px 10px;
-  padding: 5px;
-}
+  .instructions {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+  }
 
-.monthRow {
-  display: grid;
-  grid-template-columns: repeat(100, 1fr); /* 3 equal columns */
-  grid-template-rows: repeat(1, 1fr); /* 2 rows of 150px height */
-  width: 100%;
-  padding: 5px 2px;
-  border-bottom: 1px black solid;
-  align-items: center;
-}
+  .monthsDiv {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    box-shadow: 0 0 2px 2px grey;
+    border-radius: 20px;
+    overflow: auto;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
 
-.monthImg {
-  width: 100%;
-  aspect-ratio: 920/360;
-  padding: 2px 5px;
-  grid-column-start: 1;
-  grid-column-end: 40;
-}
+  .monthRow {
+    display: grid;
+    grid-template-columns: repeat(100, 1fr); 
+    grid-template-rows: repeat(1, 1fr); 
+    width: 30%;
+    padding: 5px 2px;
+    border-bottom: 1px black solid;
+    align-items: center;
+  }
 
-.monthInfo {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  padding: 2px 5px;
-  grid-column-start: 40;
-  grid-column-end: 101;
-  font-size: 14px;
-}
+  .monthImg {
+    width: 100%;
+    aspect-ratio: 920/360;
+    padding: 2px 5px;
+    grid-column-start: 1;
+    grid-column-end: 50;
+  }
 
-.monthMeaning {
-  font-weight: bold;
-}
+  .monthInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 2px 5px;
+    grid-column-start: 50;
+    grid-column-end: 101;
+    font-size: 20px;
+  }
 
-#infoCloseButton {
-  background-color: red;
-  border: none;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  width: 80px;
-  aspect-ratio: 9/6;
-  border-radius: 20px;
-  text-align: center;
-  margin-bottom: 15px;
-}
+  .monthMeaning {
+    font-weight: bold;
+  }
 
-.greyed {
-  opacity: 50%;
-}
+  #infoCloseButton {
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100px;
+    aspect-ratio: 9/6;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-.glowing {
-  box-shadow: 0 0 10px 5px rgb(255, 255, 255);
-  z-index: 3;
+  .greyed {
+    opacity: 50%;
+  }
+
+  .glowing {
+    box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+    z-index: 3;
+  }
 }
