@@ -651,33 +651,36 @@ function placeCard() {
     // Adds removedCard to clickableCards array
     clickableCards.push(removedCard);
 
-    // Filters out non-clickable cards from hand. This returns an array
-    if (hand.length > 2) {
-      hand.forEach((x) => {
-        if (x == hand[0] || x == hand[hand.length - 1]) {
-          // First and last cards are clickable
-          return false;
-        } else if (
-          // If second to last card has the same month as the last card, it is clickable
-          x == hand[hand.length - 2] &&
-          x.month == hand[hand.length - 1].month
-        ) {
-          return false;
-        } else {
-          // Everything else in the middle is unclickable and taken out from clickableCards array
-          if (clickableCards.findIndex((index) => index === x) !== -1) {
-            clickableCards.splice(
-              clickableCards.findIndex((index) => index === x),
-              1
-            );
-          }
-          // Filtered cards are pushed into unusableCards array
-          if (!unusableCards.includes(x)) {
-            unusableCards.push(x);
-          }
+    unusableCards.length = 0
+
+// Filters out non-clickable cards from hand. This returns an array
+  if (hand.length > 2) {
+    hand.forEach((x) => {
+      if (x == hand[0] || x == hand[hand.length - 1]) {
+        // First and last cards are clickable
+        return false;
+      } else if (
+        // If second to last card has the same month as the last card, it is clickable
+        x == hand[hand.length - 2] &&
+        x.month == hand[hand.length - 1].month
+      ) {
+        return false;
+      } else {
+        // Everything else in the middle is unclickable and taken out from clickableCards array
+        if (clickableCards.findIndex((index) => index === x) !== -1) {
+          clickableCards.splice(
+            clickableCards.findIndex((index) => index === x),
+            1
+          );
         }
-      });
-    }
+        // Filtered cards are pushed into unusableCards array
+
+          unusableCards.push(x);
+
+      }
+    });
+  }
+
 
     console.log("deck v");
     console.log(deck);
@@ -950,24 +953,58 @@ function checkPair(event) {
 
       // Restructures the spread and hand on display and in arrays
       pair.forEach((x) => {
+        //Un-greys newly clickable cards and reinstates previously unusable card to clickable card
         if (unusableCards.length > 0) {
-          //Un-greys newly clickable cards and reinstates previously unusable card to clickable card
+          // if the card removed was the FIRST card in the hand
           if (x.name === hand[0].name) {
+            // First card of the greyed out card would be reinstated
             let reinstatedCard = unusableCards.shift();
             document
               .getElementById(reinstatedCard.name)
               .classList.remove("greyed");
             clickableCards.push(reinstatedCard);
-          } else if (
+          } 
+          // if the card removed was the LAST card in the hand AND the second-to-last card of greyed cards WAS NOT a match to the last card of greyed cards
+          else if ( 
             x.name === hand[hand.length - 1].name &&
-            hand[hand.length - 1].month !== hand[hand.length - 2].month
+            hand[hand.length - 1].month !== hand[hand.length - 2].month &&
+            hand[hand.length - 2].month !== hand[hand.length - 3].month
           ) {
+            // Last card of the greyed out card would be reinstated
             let reinstatedCard = unusableCards.pop();
             document
               .getElementById(reinstatedCard.name)
               .classList.remove("greyed");
             clickableCards.push(reinstatedCard);
           }
+          // if the card removed was the LAST card in the hand AND the second-to-last card of greyed cards WAS a match to the last card of greyed cards
+          else if ( 
+            x.name === hand[hand.length - 1].name &&
+            hand[hand.length - 1].month !== hand[hand.length - 2].month &&
+            hand[hand.length - 2].month === hand[hand.length - 3].month
+          ) {
+            let reinstatedCardOne = unusableCards.pop();
+            document
+              .getElementById(reinstatedCardOne.name)
+              .classList.remove("greyed");
+            clickableCards.push(reinstatedCardOne);
+
+            let reinstatedCardTwo = unusableCards.pop();
+            document
+              .getElementById(reinstatedCardTwo.name)
+              .classList.remove("greyed");
+            clickableCards.push(reinstatedCardTwo);
+
+           /*let index = unusableCards.length - 2;
+            let reinstatedCardTwo = unusableCards.splice(index, 1);
+            document
+              .getElementById(reinstatedCardTwo[0].name)
+              .classList.remove("greyed");
+            clickableCards.push(reinstatedCardTwo[0]);*/
+          }
+          // if the card removed was neither first or last of hand
+          else
+          { }
         }
         // Removes paired cards from 4 spread columns arrays or hand arrays AND clickable array AND displays the next card in columns
         if (columnA.includes(x)) {
@@ -1181,7 +1218,12 @@ function openPile() {
 
   console.log(fourMatchedAll);
 
+  if(fourMatchedAll.length > 0) {
   fourMatchedAll.forEach((x) => {
     monthsDiv.appendChild(document.querySelector(`#${x}`));
   });
+} else {
+  let noFourMatchMessage = document.getElementById("emptyMessage")
+  noFourMatchMessage.style.display = "block";
+}
 }
