@@ -142,14 +142,14 @@ footer {
     justify-content: space-evenly;
     border-bottom: 2px rgb(255, 255, 255) solid;
     box-shadow: 0 3px 2px -2px rgb(0, 0, 0);
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     margin: 0 10px 0 10px;
   }
 
   .pileClass {
     box-shadow: 0 0 3px 1px white;
     border-radius: 5%;
-    width: 45px;
+    width: 35px;
     aspect-ratio: 230/345;
     display: flex;
     justify-content: center;
@@ -315,12 +315,13 @@ footer {
     align-items: center;
     padding: 0px 0;
     border-radius: 20px;
+    overflow: auto;
   }
 
   #resultTitle {
     padding: 0;
-    margin-bottom: 15px;
-    font-size: 25px;
+    margin-bottom: 10px;
+    font-size: 20px;
     text-decoration: underline;
     text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
@@ -335,7 +336,7 @@ footer {
     box-shadow: 0 0 2px 2px grey;
     border-radius: 20px;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .pileResultRows {
@@ -364,12 +365,12 @@ footer {
     border: rgb(48, 99, 55) 8px solid;
     color: white;
     font-weight: bold;
-    font-size: 14px;
-    width: 100px;
+    font-size: 12px;
+    width: 80px;
     aspect-ratio: 9/6;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   #resultCloseButton:hover {
@@ -401,12 +402,13 @@ footer {
     align-items: center;
     padding: 0px 0;
     border-radius: 20px;
+    overflow: auto;
   }
 
   #infoTitle {
     padding: 0;
-    margin-bottom: 15px;
-    font-size: 25px;
+    margin-bottom: 10px;
+    font-size: 20px;
     text-decoration: underline;
     text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
@@ -417,11 +419,17 @@ footer {
     justify-content: space-around;
     align-items: center;
     margin: 0 10px;
+    box-shadow: 0 0 1px 1px grey;
+    border-radius: 20px;
+    padding: 10px;
+    overflow: auto;
+    margin: 0 10px 10px 10px;
+    height: 600px;
   }
 
   .instructions {
     margin: 0 0 10px 0;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .monthsDiv {
@@ -431,7 +439,7 @@ footer {
     box-shadow: 0 0 1px 1px grey;
     border-radius: 20px;
     overflow: auto;
-    margin: 0 10px 15px 10px;
+    margin: 0 10px 10px 10px;
     padding: 5px;
   }
 
@@ -472,12 +480,12 @@ footer {
     border: rgb(255, 0, 0) 8px solid;
     color: white;
     font-weight: bold;
-    font-size: 18px;
-    width: 80px;
+    font-size: 14px;
+    width: 70px;
     aspect-ratio: 9/6;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   #infoCloseButton:hover {
