@@ -56,7 +56,6 @@ footer {
     font-weight: 400;
     font-style: normal;
     height: 100vh;
-    overflow-y: hidden;
   }
 
   /* Header */
@@ -246,7 +245,7 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    overflow: auto;
+
   }
 
   /* Left Box */
@@ -268,7 +267,7 @@ footer {
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
     margin-top: 15px;
     z-index: 1;
-    position: fixed;
+
   }
 
 
@@ -529,7 +528,6 @@ footer {
     font-weight: 400;
     font-style: normal;
     height: 100vh;
-    overflow-y: hidden;
   }
 
   /* Header */
@@ -719,8 +717,7 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    overflow: auto;
-  }
+    }
 
   /* Left Box */
   #leftBox {
@@ -741,7 +738,6 @@ footer {
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
     margin-top: 15px;
     z-index: 1;
-    position: fixed;
   }
 
   /* Right Box */
@@ -992,7 +988,6 @@ footer {
     font-weight: 400;
     font-style: normal;
     height: 100vh;
-    overflow-y: hidden;
   }
 
   /* Header */
@@ -1198,7 +1193,6 @@ footer {
     grid-column-end: 70;
     grid-row-start: 50;
     grid-row-end: 101;
-    overflow: auto;
   }
 
   /* Left Box */
@@ -1219,7 +1213,6 @@ footer {
     align-items: center;
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
     z-index: 1;
-    position: fixed;
   }
 
   /* Right Box */
