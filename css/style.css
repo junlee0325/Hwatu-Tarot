@@ -361,12 +361,12 @@ footer {
 
   #resultCloseButton {
     background-color: rgb(68, 131, 78);
-    border: rgb(48, 99, 55) 8px solid;
+    border: rgb(48, 99, 55) 6px solid;
     color: white;
     font-weight: bold;
     font-size: 12px;
-    width: 80px;
-    aspect-ratio: 9/6;
+    width: 150px;
+    aspect-ratio: 18/4;
     border-radius: 20px;
     text-align: center;
     margin-bottom: 10px;
@@ -386,7 +386,7 @@ footer {
     width: 100%;
     height: 100%;
     position: fixed;
-    display: none /*change to none later */;
+    display: flex /*change to none later */;
     justify-content: center;
     align-items: center;
   }
@@ -475,20 +475,20 @@ footer {
   }
 
   #infoCloseButton {
-    background-color: rgb(255, 106, 106);
-    border: rgb(255, 0, 0) 8px solid;
+    background-color: rgb(68, 131, 78);
+    border: rgb(48, 99, 55) 6px solid;
     color: white;
     font-weight: bold;
-    font-size: 14px;
-    width: 70px;
-    aspect-ratio: 9/6;
+    font-size: 12px;
+    width: 150px;
+    aspect-ratio: 18/4;
     border-radius: 20px;
     text-align: center;
     margin-bottom: 10px;
   }
 
   #infoCloseButton:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(48, 99, 55);
     transition: 0.5s;
   }
 
@@ -791,7 +791,7 @@ footer {
   #resultTitle {
     padding: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 35px;
     text-decoration: underline;
     text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
@@ -831,15 +831,15 @@ footer {
 
   #resultCloseButton {
     background-color: rgb(68, 131, 78);
-    border: rgb(48, 99, 55) 8px solid;
+    border: rgb(48, 99, 55) 6px solid;
     color: white;
     font-weight: bold;
-    font-size: 16px;
-    width: 100px;
-    aspect-ratio: 9/6;
+    font-size: 18px;
+    width: 200px;
+    aspect-ratio: 18/4;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   #resultCloseButton:hover {
@@ -856,7 +856,7 @@ footer {
     width: 100%;
     height: 100%;
     position: fixed;
-    display: none /*change to none later */;
+    display: flex /*change to none later */;
     justify-content: center;
     align-items: center;
   }
@@ -877,7 +877,7 @@ footer {
   #infoTitle {
     padding: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 35px;
     text-decoration: underline;
     text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
@@ -938,20 +938,20 @@ footer {
   }
 
   #infoCloseButton {
-    background-color: rgb(255, 106, 106);
-    border: rgb(255, 0, 0) 8px solid;
+    background-color: rgb(68, 131, 78);
+    border: rgb(48, 99, 55) 6px solid;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    width: 80px;
-    aspect-ratio: 9/6;
+    width: 200px;
+    aspect-ratio: 18/4;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   #infoCloseButton:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(48, 99, 55);
     transition: 0.5s;
   }
 
@@ -1307,15 +1307,15 @@ footer {
 
   #resultCloseButton {
     background-color: rgb(68, 131, 78);
-    border: rgb(48, 99, 55) 10px solid;
+    border: rgb(48, 99, 55) 6px solid;
     color: white;
     font-weight: bold;
-    font-size: 16px;
-    width: 150px;
-    aspect-ratio: 12/6;
+    font-size: 18px;
+    width: 200px;
+    aspect-ratio: 18/4;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   #resultCloseButton:hover {
@@ -1332,7 +1332,7 @@ footer {
     width: 100%;
     height: 100%;
     position: fixed;
-    display: none /*change to none later */;
+    display: flex /*change to none later */;
     justify-content: center;
     align-items: center;
   }
@@ -1415,20 +1415,20 @@ footer {
   }
 
   #infoCloseButton {
-    background-color: rgb(255, 106, 106);
-    border: rgb(255, 0, 0) 10px solid;
+    background-color: rgb(68, 131, 78);
+    border: rgb(48, 99, 55) 6px solid;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    width: 100px;
-    aspect-ratio: 9/6;
+    width: 200px;
+    aspect-ratio: 18/4;
     border-radius: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   #infoCloseButton:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(48, 99, 55);
     transition: 0.5s;
   }
 
