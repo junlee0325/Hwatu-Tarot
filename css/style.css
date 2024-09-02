@@ -56,11 +56,18 @@ footer {
     font-weight: 400;
     font-style: normal;
     height: 100vh;
+    overflow-y: hidden;
   }
 
   /* Header */
   header {
     margin: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  #headTitles {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -69,18 +76,49 @@ footer {
   #titleOne {
     text-align: center;
     color: rgb(255, 255, 255);
-    text-shadow: 2px 4px 6px black;
-    font-size: 30px;
+    text-shadow: 4px 6px 5px black;
+    font-size: 26px;
     margin: 0;
   }
 
   #titleTwo {
     text-align: center;
     color: rgb(255, 255, 255);
-    text-shadow: 2px 4px 6px black;
-    font-size: 40px;
+    text-shadow: 4px 6px 5px black;
+    font-size: 30px;
     margin: 0;
     text-decoration: underline;
+  }
+
+  #infoResetDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #resetButton {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 0px 10px;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  #infoButton {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 0px 10px;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
   }
 
   #date {
@@ -138,7 +176,7 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    height: 200px;
+    height: 185px;
   }
 
   .spreadRow1 {
@@ -158,7 +196,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -65px;
+    top: -70px;
     background-image: url("../images/back.png");
     background-size: cover;
     width: 58px;
@@ -170,7 +208,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -130px;
+    top: -140px;
     background-image: url("../images/back.png");
     background-size: cover;
     width: 58px;
@@ -182,7 +220,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -195px;
+    top: -210px;
     background-image: url("../images/back.png");
     background-size: cover;
     width: 58px;
@@ -194,7 +232,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -260px;
+    top: -280px;
     background-image: url("../images/back.png");
     background-size: cover;
     width: 58px;
@@ -216,11 +254,11 @@ footer {
   #leftBox {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 0;
     width: 20%;
-    height: 200px;
+    height: 300px;
   }
 
   #facedown {
@@ -231,40 +269,9 @@ footer {
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
     margin-top: 15px;
     z-index: 1;
-  }
-
-  #infoResetDiv {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
-    bottom: 10px;
   }
 
-  #resetButton {
-    width: 58px;
-    aspect-ratio: 1/1;
-    border: none;
-    margin: 10px 0;
-    filter: invert(1);
-    opacity: 70%;
-    background-color: black;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
-  }
-
-  #infoButton {
-    width: 58px;
-    aspect-ratio: 1/1;
-    border: none;
-    margin: 10px 0;
-    filter: invert(1);
-    opacity: 70%;
-    background-color: black;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
-  }
 
   /* Right Box */
   #rightBox {
@@ -333,8 +340,8 @@ footer {
 
   .pileResultRows {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(6, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
     padding: 0;
     margin: 2%;
@@ -430,8 +437,8 @@ footer {
 
   .monthRow {
     display: grid;
-    grid-template-columns: repeat(100, 1fr); 
-    grid-template-rows: repeat(1, 1fr); 
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     width: 100%;
     padding: 5px 2px;
     border-bottom: 1px black solid;
@@ -473,10 +480,10 @@ footer {
     margin-bottom: 15px;
   }
 
-#infoCloseButton:hover {
-  background-color: rgb(255, 0, 0);
-  transition: 0.5s;
-}
+  #infoCloseButton:hover {
+    background-color: rgb(255, 0, 0);
+    transition: 0.5s;
+  }
 
   .greyed {
     opacity: 50%;
@@ -515,11 +522,18 @@ footer {
     font-weight: 400;
     font-style: normal;
     height: 100vh;
+    overflow-y: hidden;
   }
 
   /* Header */
   header {
-    margin: 50px;
+    margin: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  #headTitles {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -540,6 +554,37 @@ footer {
     font-size: 40px;
     margin: 0;
     text-decoration: underline;
+  }
+
+  #infoResetDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #resetButton {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  #infoButton {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 10px 0;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
   }
 
   #date {
@@ -675,11 +720,11 @@ footer {
   #leftBox {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 0;
     width: 20%;
-    height: 200px;
+    height: 300px;
   }
 
   #facedown {
@@ -690,39 +735,7 @@ footer {
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
     margin-top: 15px;
     z-index: 1;
-  }
-
-  #infoResetDiv {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
-    bottom: 20px;
-  }
-
-  #resetButton {
-    width: 60px;
-    aspect-ratio: 1/1;
-    border: none;
-    margin: 10px 0;
-    filter: invert(1);
-    opacity: 70%;
-    background-color: black;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
-  }
-
-  #infoButton {
-    width: 60px;
-    aspect-ratio: 1/1;
-    border: none;
-    margin: 10px 0;
-    filter: invert(1);
-    opacity: 70%;
-    background-color: black;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
   }
 
   /* Right Box */
@@ -767,7 +780,6 @@ footer {
     align-items: center;
     border-radius: 20px;
     padding: 0 30px;
-
   }
 
   #resultTitle {
@@ -792,8 +804,8 @@ footer {
 
   .pileResultRows {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
     padding: 0;
     margin: 1%;
@@ -889,8 +901,8 @@ footer {
 
   .monthRow {
     display: grid;
-    grid-template-columns: repeat(100, 1fr); 
-    grid-template-rows: repeat(1, 1fr); 
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     width: 100%;
     padding: 5px 2px;
     border-bottom: 1px black solid;
@@ -932,10 +944,10 @@ footer {
     margin-bottom: 15px;
   }
 
-#infoCloseButton:hover {
-  background-color: rgb(255, 0, 0);
-  transition: 0.5s;
-}
+  #infoCloseButton:hover {
+    background-color: rgb(255, 0, 0);
+    transition: 0.5s;
+  }
 
   .greyed {
     opacity: 50%;
@@ -968,17 +980,17 @@ footer {
     background-size: fill;
     clear: both;
     display: grid;
-    grid-template-columns: repeat(100, 1fr); 
-    grid-template-rows: repeat(100, 1fr); 
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(100, 1fr);
     font-family: "Gowun Dodum", sans-serif;
     font-weight: 400;
     font-style: normal;
     height: 100vh;
+    overflow-y: hidden;
   }
 
   /* Header */
   header {
-    margin: 50px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -986,11 +998,17 @@ footer {
     grid-column-end: 101;
     grid-row-start: 10;
     grid-row-end: 101;
-    margin: 10px 0 0 0;
+    margin: 0 0 0 0;
+  }
+
+  #headTitles {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
   }
 
   #titleOne {
-    text-align: center;
+    text-align: left;
     color: rgb(255, 255, 255);
     text-shadow: 4px 6px 5px black;
     font-size: 100px;
@@ -1004,6 +1022,39 @@ footer {
     text-shadow: 4px 6px 5px black;
     font-size: 50px;
     margin: 0;
+  }
+
+  #infoResetDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 20px;
+    margin: 30px 0;
+  }
+
+  #resetButton {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 0px 15px;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  }
+
+  #infoButton {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: none;
+    margin: 0px 15px;
+    filter: invert(1);
+    opacity: 70%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
   }
 
   #date {
@@ -1162,39 +1213,7 @@ footer {
     align-items: center;
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
     z-index: 1;
-  }
-
-  #infoResetDiv {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    bottom: 20px;
-    margin: 10px 0;
-  }
-
-  #resetButton {
-    width: 50px;
-    aspect-ratio: 1/1;
-    border: none;
-    margin: 10px 0;
-    filter: invert(1);
-    opacity: 70%;
-    background-color: black;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
-  }
-
-  #infoButton {
-    width: 50px;
-    aspect-ratio: 1/1;
-    border: none;
-    margin: 10px 0;
-    filter: invert(1);
-    opacity: 70%;
-    background-color: black;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    position: fixed;
   }
 
   /* Right Box */
@@ -1258,8 +1277,8 @@ footer {
 
   .pileResultRows {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); 
-    grid-template-rows: repeat(1, 1fr); 
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
     padding: 0;
     margin: 1%;
@@ -1358,8 +1377,8 @@ footer {
 
   .monthRow {
     display: grid;
-    grid-template-columns: repeat(100, 1fr); 
-    grid-template-rows: repeat(1, 1fr); 
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     width: 50%;
     padding: 5px 2px;
     border-bottom: 1px black solid;
@@ -1402,10 +1421,10 @@ footer {
     margin-bottom: 15px;
   }
 
-#infoCloseButton:hover {
-  background-color: rgb(255, 0, 0);
-  transition: 0.5s;
-}
+  #infoCloseButton:hover {
+    background-color: rgb(255, 0, 0);
+    transition: 0.5s;
+  }
 
   .greyed {
     opacity: 50%;
