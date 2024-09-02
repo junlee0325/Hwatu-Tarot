@@ -341,7 +341,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
     padding: 0;
     margin: 2%;
     width: 20%;
@@ -502,7 +501,7 @@ footer {
 
   #emptyMessage {
     display: none;
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -808,7 +807,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    box-shadow: 0 0 1vh 1px rgb(0, 0, 0);
     padding: 0;
     margin: 1%;
     width: 48%;
