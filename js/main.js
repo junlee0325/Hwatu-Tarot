@@ -20,6 +20,17 @@ document
   .querySelector("#resultCloseButton")
   .addEventListener("click", refreshPage);
 
+document
+  .querySelector("#impossibleResetButton")
+  .addEventListener("click", refreshPage);
+
+document
+  .querySelector("#impossibleCloseButton")
+  .addEventListener("click", closeImpossible);
+function closeImpossible() {
+  document.querySelector("#impossibleOverlay").style.display = "none";
+}
+
 ////
 ////
 ////
@@ -65,289 +76,289 @@ const janA = {
   name: "janA",
   month: "jan",
   rank: "A",
-  img: "../images/janA.png",
+  img: "../images/janA.webp",
 };
 const janB = {
   name: "janB",
   month: "jan",
   rank: "B",
-  img: "../images/janB.png",
+  img: "../images/janB.webp",
 };
 const janC = {
   name: "janC",
   month: "jan",
   rank: "C",
-  img: "../images/janC.png",
+  img: "../images/janC.webp",
 };
 const janD = {
   name: "janD",
   month: "jan",
   rank: "D",
-  img: "../images/janD.png",
+  img: "../images/janD.webp",
 };
 const febA = {
   name: "febA",
   month: "feb",
   rank: "A",
-  img: "../images/febA.png",
+  img: "../images/febA.webp",
 };
 const febB = {
   name: "febB",
   month: "feb",
   rank: "B",
-  img: "../images/febB.png",
+  img: "../images/febB.webp",
 };
 const febC = {
   name: "febC",
   month: "feb",
   rank: "C",
-  img: "../images/febC.png",
+  img: "../images/febC.webp",
 };
 const febD = {
   name: "febD",
   month: "feb",
   rank: "D",
-  img: "../images/febD.png",
+  img: "../images/febD.webp",
 };
 const marA = {
   name: "marA",
   month: "mar",
   rank: "A",
-  img: "../images/marA.png",
+  img: "../images/marA.webp",
 };
 const marB = {
   name: "marB",
   month: "mar",
   rank: "B",
-  img: "../images/marB.png",
+  img: "../images/marB.webp",
 };
 const marC = {
   name: "marC",
   month: "mar",
   rank: "C",
-  img: "../images/marC.png",
+  img: "../images/marC.webp",
 };
 const marD = {
   name: "marD",
   month: "mar",
   rank: "D",
-  img: "../images/marD.png",
+  img: "../images/marD.webp",
 };
 const aprA = {
   name: "aprA",
   month: "apr",
   rank: "A",
-  img: "../images/aprA.png",
+  img: "../images/aprA.webp",
 };
 const aprB = {
   name: "aprB",
   month: "apr",
   rank: "B",
-  img: "../images/aprB.png",
+  img: "../images/aprB.webp",
 };
 const aprC = {
   name: "aprC",
   month: "apr",
   rank: "C",
-  img: "../images/aprC.png",
+  img: "../images/aprC.webp",
 };
 const aprD = {
   name: "aprD",
   month: "apr",
   rank: "D",
-  img: "../images/aprD.png",
+  img: "../images/aprD.webp",
 };
 const mayA = {
   name: "mayA",
   month: "may",
   rank: "A",
-  img: "../images/mayA.png",
+  img: "../images/mayA.webp",
 };
 const mayB = {
   name: "mayB",
   month: "may",
   rank: "B",
-  img: "../images/mayB.png",
+  img: "../images/mayB.webp",
 };
 const mayC = {
   name: "mayC",
   month: "may",
   rank: "C",
-  img: "../images/mayC.png",
+  img: "../images/mayC.webp",
 };
 const mayD = {
   name: "mayD",
   month: "may",
   rank: "D",
-  img: "../images/mayD.png",
+  img: "../images/mayD.webp",
 };
 const junA = {
   name: "junA",
   month: "jun",
   rank: "A",
-  img: "../images/junA.png",
+  img: "../images/junA.webp",
 };
 const junB = {
   name: "junB",
   month: "jun",
   rank: "B",
-  img: "../images/junB.png",
+  img: "../images/junB.webp",
 };
 const junC = {
   name: "junC",
   month: "jun",
   rank: "C",
-  img: "../images/junC.png",
+  img: "../images/junC.webp",
 };
 const junD = {
   name: "junD",
   month: "jun",
   rank: "D",
-  img: "../images/junD.png",
+  img: "../images/junD.webp",
 };
 const julA = {
   name: "julA",
   month: "jul",
   rank: "A",
-  img: "../images/julA.png",
+  img: "../images/julA.webp",
 };
 const julB = {
   name: "julB",
   month: "jul",
   rank: "B",
-  img: "../images/julB.png",
+  img: "../images/julB.webp",
 };
 const julC = {
   name: "julC",
   month: "jul",
   rank: "C",
-  img: "../images/julC.png",
+  img: "../images/julC.webp",
 };
 const julD = {
   name: "julD",
   month: "jul",
   rank: "D",
-  img: "../images/julD.png",
+  img: "../images/julD.webp",
 };
 const augA = {
   name: "augA",
   month: "aug",
   rank: "A",
-  img: "../images/augA.png",
+  img: "../images/augA.webp",
 };
 const augB = {
   name: "augB",
   month: "aug",
   rank: "B",
-  img: "../images/augB.png",
+  img: "../images/augB.webp",
 };
 const augC = {
   name: "augC",
   month: "aug",
   rank: "C",
-  img: "../images/augC.png",
+  img: "../images/augC.webp",
 };
 const augD = {
   name: "augD",
   month: "aug",
   rank: "D",
-  img: "../images/augD.png",
+  img: "../images/augD.webp",
 };
 const sepA = {
   name: "sepA",
   month: "sep",
   rank: "A",
-  img: "../images/sepA.png",
+  img: "../images/sepA.webp",
 };
 const sepB = {
   name: "sepB",
   month: "sep",
   rank: "B",
-  img: "../images/sepB.png",
+  img: "../images/sepB.webp",
 };
 const sepC = {
   name: "sepC",
   month: "sep",
   rank: "C",
-  img: "../images/sepC.png",
+  img: "../images/sepC.webp",
 };
 const sepD = {
   name: "sepD",
   month: "sep",
   rank: "D",
-  img: "../images/sepD.png",
+  img: "../images/sepD.webp",
 };
 const octA = {
   name: "octA",
   month: "oct",
   rank: "A",
-  img: "../images/octA.png",
+  img: "../images/octA.webp",
 };
 const octB = {
   name: "octB",
   month: "oct",
   rank: "B",
-  img: "../images/octB.png",
+  img: "../images/octB.webp",
 };
 const octC = {
   name: "octC",
   month: "oct",
   rank: "C",
-  img: "../images/octC.png",
+  img: "../images/octC.webp",
 };
 const octD = {
   name: "octD",
   month: "oct",
   rank: "D",
-  img: "../images/octD.png",
+  img: "../images/octD.webp",
 };
 const novA = {
   name: "novA",
   month: "nov",
   rank: "A",
-  img: "../images/novA.png",
+  img: "../images/novA.webp",
 };
 const novB = {
   name: "novB",
   month: "nov",
   rank: "B",
-  img: "../images/novB.png",
+  img: "../images/novB.webp",
 };
 const novC = {
   name: "novC",
   month: "nov",
   rank: "C",
-  img: "../images/novC.png",
+  img: "../images/novC.webp",
 };
 const novD = {
   name: "novD",
   month: "nov",
   rank: "D",
-  img: "../images/novD.png",
+  img: "../images/novD.webp",
 };
 const decA = {
   name: "decA",
   month: "dec",
   rank: "A",
-  img: "../images/decA.png",
+  img: "../images/decA.webp",
 };
 const decB = {
   name: "decB",
   month: "dec",
   rank: "B",
-  img: "../images/decB.png",
+  img: "../images/decB.webp",
 };
 const decC = {
   name: "decC",
   month: "dec",
   rank: "C",
-  img: "../images/decC.png",
+  img: "../images/decC.webp",
 };
 const decD = {
   name: "decD",
   month: "dec",
   rank: "D",
-  img: "../images/decD.png",
+  img: "../images/decD.webp",
 };
 ////
 ////
@@ -475,7 +486,7 @@ function placeIntoA() {
     let visibleCard = document.createElement("img");
     visibleCard.setAttribute("id", `${removedCard.name}`);
     visibleCard.classList.add(`spreadRow${i}`);
-    visibleCard.src = `../images/back.png`;
+    visibleCard.src = `../images/back.webp`;
     document.querySelector(`#spreadA`).appendChild(visibleCard);
   }
   if (i === 5) {
@@ -494,7 +505,7 @@ function placeIntoB() {
     let visibleCard = document.createElement("img");
     visibleCard.setAttribute("id", `${removedCard.name}`);
     visibleCard.classList.add(`spreadRow${i}`);
-    visibleCard.src = `../images/back.png`;
+    visibleCard.src = `../images/back.webp`;
     document.querySelector(`#spreadB`).appendChild(visibleCard);
   }
   if (i === 5) {
@@ -513,7 +524,7 @@ function placeIntoC() {
     let visibleCard = document.createElement("img");
     visibleCard.setAttribute("id", `${removedCard.name}`);
     visibleCard.classList.add(`spreadRow${i}`);
-    visibleCard.src = `../images/back.png`;
+    visibleCard.src = `../images/back.webp`;
     document.querySelector(`#spreadC`).appendChild(visibleCard);
   }
   if (i === 5) {
@@ -532,7 +543,7 @@ function placeIntoD() {
     let visibleCard = document.createElement("img");
     visibleCard.setAttribute("id", `${removedCard.name}`);
     visibleCard.classList.add(`spreadRow${i}`);
-    visibleCard.src = `../images/back.png`;
+    visibleCard.src = `../images/back.webp`;
     document.querySelector(`#spreadD`).appendChild(visibleCard);
   }
   if (i === 5) {
@@ -581,7 +592,7 @@ const visibleHandContainer = document.querySelector("#visibleHandContainer");
 let hand = [];
 // Create facedown card image in div
 let back = document.createElement("img");
-back.src = "../images/back.png";
+back.src = "../images/back.webp";
 facedown.appendChild(back);
 // Event listener for when facedown image is clicked
 facedown.addEventListener("click", placeCard);
@@ -610,7 +621,7 @@ function placeCard() {
     // Reinstates facedown card
     facedown.innerHTML = "";
     let back = document.createElement("img");
-    back.src = "../images/back.png";
+    back.src = "../images/back.webp";
     facedown.appendChild(back);
 
     //console logs
@@ -633,12 +644,18 @@ function placeCard() {
 
     // Empties hand container
     visibleHandContainer.innerHTML = "";
+
+    if (hand.length === 0 && deck.length === 0) {
+      // Remove facedown
+      document.getElementById("handContainer").innerHTML = "";
+    }
   }
   // else-case for when deck is NOT depleted
   else {
     // Displays card from facedown (deck)
     let removedCard = deck.pop();
     hand.push(removedCard);
+
     let visibleCard = document.createElement("img");
     visibleCard.setAttribute(
       "id",
@@ -651,36 +668,34 @@ function placeCard() {
     // Adds removedCard to clickableCards array
     clickableCards.push(removedCard);
 
-    unusableCards.length = 0
+    unusableCards.length = 0;
 
-// Filters out non-clickable cards from hand. This returns an array
-  if (hand.length > 2) {
-    hand.forEach((x) => {
-      if (x == hand[0] || x == hand[hand.length - 1]) {
-        // First and last cards are clickable
-        return false;
-      } else if (
-        // If second to last card has the same month as the last card, it is clickable
-        x == hand[hand.length - 2] &&
-        x.month == hand[hand.length - 1].month
-      ) {
-        return false;
-      } else {
-        // Everything else in the middle is unclickable and taken out from clickableCards array
-        if (clickableCards.findIndex((index) => index === x) !== -1) {
-          clickableCards.splice(
-            clickableCards.findIndex((index) => index === x),
-            1
-          );
-        }
-        // Filtered cards are pushed into unusableCards array
+    // Filters out non-clickable cards from hand. This returns an array
+    if (hand.length > 2) {
+      hand.forEach((x) => {
+        if (x == hand[0] || x == hand[hand.length - 1]) {
+          // First and last cards are clickable
+          return false;
+        } else if (
+          // If second to last card has the same month as the last card, it is clickable
+          x == hand[hand.length - 2] &&
+          x.month == hand[hand.length - 1].month
+        ) {
+          return false;
+        } else {
+          // Everything else in the middle is unclickable and taken out from clickableCards array
+          if (clickableCards.findIndex((index) => index === x) !== -1) {
+            clickableCards.splice(
+              clickableCards.findIndex((index) => index === x),
+              1
+            );
+          }
+          // Filtered cards are pushed into unusableCards array
 
           unusableCards.push(x);
-
-      }
-    });
-  }
-
+        }
+      });
+    }
 
     console.log("deck v");
     console.log(deck);
@@ -695,85 +710,66 @@ function placeCard() {
     if (deck.length === 0) {
       facedown.innerHTML = "";
       let circle = document.createElement("img");
-      circle.src = "../images/circle.png";
+      circle.src = "../images/circle.webp";
       facedown.appendChild(circle);
-    }
 
-    // If the game is impossible, alert that it's impossible and reload page
-    /*if (deck.length === 0) {
-      let duplicateCheckArray = [];
+      // Check columns for matching pair
+      let duplicateCheckArrayColumns = [];
+
       if (columnA.length > 0) {
-        duplicateCheckArray.push(columnA[columnA.length - 1].month);
+        duplicateCheckArrayColumns.push(columnA[columnA.length - 1].month);
       }
       if (columnB.length > 0) {
-        duplicateCheckArray.push(columnB[columnB.length - 1].month);
+        duplicateCheckArrayColumns.push(columnB[columnB.length - 1].month);
       }
       if (columnC.length > 0) {
-        duplicateCheckArray.push(columnC[columnC.length - 1].month);
+        duplicateCheckArrayColumns.push(columnC[columnC.length - 1].month);
       }
       if (columnD.length > 0) {
-        duplicateCheckArray.push(columnD[columnD.length - 1].month);
+        duplicateCheckArrayColumns.push(columnD[columnD.length - 1].month);
       }
-      hand.forEach((x) => {
-        duplicateCheckArray.push(x.month);
-      });
-      let hasDuplicate =
-        new Set(duplicateCheckArray).size !== duplicateCheckArray.length;
-      if (hasDuplicate !== true) {
-        duplicateCheckArray.length = 0;
-        alert("No more matches available. Try again :)");
-        window.location.reload();
 
-      } else {
+      console.log("duplicateCheckArrayColumns v");
+      console.log(duplicateCheckArrayColumns);
+      // A Set only stores unique values, so if the size of the Set is smaller than the length of the array, there is a duplicate.
+      let hasDuplicateColumns =
+        new Set(duplicateCheckArrayColumns).size !==
+        duplicateCheckArrayColumns.length;
 
-        let duplicateCheckArray = [];
-        if (columnA.length > 0) {
-          duplicateCheckArray.push(columnA[columnA.length - 1].month);
-        }
-        if (columnB.length > 0) {
-          duplicateCheckArray.push(columnB[columnB.length - 1].month);
-        }
-        if (columnC.length > 0) {
-          duplicateCheckArray.push(columnC[columnC.length - 1].month);
-        }
-        if (columnD.length > 0) {
-          duplicateCheckArray.push(columnD[columnD.length - 1].month);
-        }
-        clickableCards.forEach((x) => {
-          duplicateCheckArray.push(x.month);
-        });
-        let hasDuplicate =
-          new Set(duplicateCheckArray).size !== duplicateCheckArray.length;
-        if (hasDuplicate !== true) {
-          duplicateCheckArray.length = 0;
-          alert("No more matches available. Try again :)");
-          window.location.reload();
+      // Columns not empty and no matching pair in columns
+      if (
+        columnA.length + columnB.length + columnC.length + columnD.length >
+        0
+      ) {
+        if (hasDuplicateColumns !== true) {
+          // Look to see if any of hand cards match the columns
+          let handMonths = [];
+          if (hand.length !== 0) {
+            hand.forEach((x) => {
+              handMonths.push(x.month);
+            });
+          }
+          let hasMatch = duplicateCheckArrayColumns.some((item) =>
+            handMonths.includes(item)
+          );
 
+          console.log("handMonths v");
+          console.log(handMonths);
+          /// if there is no match between hand and column cards
+          if (hasMatch !== true) {
+            // Display imposiblle message
+            document.getElementById("impossibleOverlay").style.display = "flex";
+          } else {
+            // else empty the possibility checking arrays
+            console.log("still possible");
+            duplicateCheckArrayColumns.length = 0;
+            handMonths.length = 0;
+          }
         } else {
-
-          let duplicateCheckArray = [];
-          if (columnA.length > 0) {
-            duplicateCheckArray.push(columnA[columnA.length - 1].month);
-          }
-          if (columnB.length > 0) {
-            duplicateCheckArray.push(columnB[columnB.length - 1].month);
-          }
-          if (columnC.length > 0) {
-            duplicateCheckArray.push(columnC[columnC.length - 1].month);
-          }
-          if (columnD.length > 0) {
-            duplicateCheckArray.push(columnD[columnD.length - 1].month);
-          }
-          let hasDuplicate =
-            new Set(duplicateCheckArray).size !== duplicateCheckArray.length;
-          if (hasDuplicate !== true) {
-            duplicateCheckArray.length = 0;
-            alert("No more matches available. Try again :)");
-            window.location.reload();
-          }
+          duplicateCheckArrayColumns.length = 0;
         }
       }
-    }*/
+    }
   }
 }
 
@@ -963,9 +959,9 @@ function checkPair(event) {
               .getElementById(reinstatedCard.name)
               .classList.remove("greyed");
             clickableCards.push(reinstatedCard);
-          } 
+          }
           // if the card removed was the LAST card in the hand AND the second-to-last card of greyed cards WAS NOT a match to the last card of greyed cards
-          else if ( 
+          else if (
             x.name === hand[hand.length - 1].name &&
             hand[hand.length - 1].month !== hand[hand.length - 2].month &&
             hand[hand.length - 2].month !== hand[hand.length - 3].month
@@ -978,7 +974,7 @@ function checkPair(event) {
             clickableCards.push(reinstatedCard);
           }
           // if the card removed was the LAST card in the hand AND the second-to-last card of greyed cards WAS a match to the last card of greyed cards
-          else if ( 
+          else if (
             x.name === hand[hand.length - 1].name &&
             hand[hand.length - 1].month !== hand[hand.length - 2].month &&
             hand[hand.length - 2].month === hand[hand.length - 3].month
@@ -994,17 +990,8 @@ function checkPair(event) {
               .getElementById(reinstatedCardTwo.name)
               .classList.remove("greyed");
             clickableCards.push(reinstatedCardTwo);
-
-           /*let index = unusableCards.length - 2;
-            let reinstatedCardTwo = unusableCards.splice(index, 1);
-            document
-              .getElementById(reinstatedCardTwo[0].name)
-              .classList.remove("greyed");
-            clickableCards.push(reinstatedCardTwo[0]);*/
+          } else {
           }
-          // if the card removed was neither first or last of hand
-          else
-          { }
         }
         // Removes paired cards from 4 spread columns arrays or hand arrays AND clickable array AND displays the next card in columns
         if (columnA.includes(x)) {
@@ -1126,6 +1113,15 @@ function checkPair(event) {
 // DOM update when all 48 cards are in piles
 ////
 function updateDOMAtEnd() {
+  // Remove facedown
+  document.getElementById("handContainer").innerHTML = "";
+  // Empty spread container and display "click to see result"
+  document.getElementById("spreadContainer").innerHTML = "";
+  let clickToSeeResult = document.createElement("h4");
+  clickToSeeResult.classList.add("clickToSeeResult");
+  clickToSeeResult.textContent = "▲	Click to See Result ▲";
+  document.getElementById("spreadContainer").appendChild(clickToSeeResult);
+  // Make piles glow and clickable
   divPileA.classList.add("glowing");
   divPileB.classList.add("glowing");
   divPileC.classList.add("glowing");
@@ -1218,12 +1214,12 @@ function openPile() {
 
   console.log(fourMatchedAll);
 
-  if(fourMatchedAll.length > 0) {
-  fourMatchedAll.forEach((x) => {
-    monthsDiv.appendChild(document.querySelector(`#${x}`));
-  });
-} else {
-  let noFourMatchMessage = document.getElementById("emptyMessage")
-  noFourMatchMessage.style.display = "block";
-}
+  if (fourMatchedAll.length > 0) {
+    fourMatchedAll.forEach((x) => {
+      monthsDiv.appendChild(document.querySelector(`#${x}`));
+    });
+  } else {
+    let noFourMatchMessage = document.getElementById("emptyMessage");
+    noFourMatchMessage.style.display = "block";
+  }
 }
