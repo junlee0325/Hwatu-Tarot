@@ -34,29 +34,17 @@ footer {
 /* ADDITIONAL STYLES
 /*******************************************/
 
+
 /* Bounce Animation */
 @keyframes bounce {
-  0%,
-  100% {
-    bottom: 0px;
+  0%, 100% {
+    transform: translateY(0px)
   }
-  25%,
-  75% {
-    bottom: 3px;
+  25%, 75% {
+    transform: translateY(2px)
   }
   50% {
-    bottom: 6px;
-  }
-}
-/* Drop Animation */
-@keyframes bloom {
-  0% {
-    width: 0%;
-    height: 0%;
-  }
-  100% {
-    width: 90%;
-    height: 90%;
+    transform: translateY(2px)
   }
 }
 /* Opacity Animation */
@@ -67,6 +55,10 @@ footer {
   100% {
     opacity: 100%;
   }
+}
+/* Scale down with clicked */
+.scaleOnClick:active {
+  scale: 95%;
 }
 
 /*******************************************/
@@ -142,6 +134,10 @@ footer {
     border: 1px black solid;
   }
 
+  #resetButton:active {
+    scale: 95%;
+  }
+
   #infoButton {
     width: 40px;
     aspect-ratio: 1/1;
@@ -152,6 +148,10 @@ footer {
     background-color: black;
     border-radius: 50%;
     border: 1px black solid;
+  }
+
+  #infoButton:active {
+    scale: 95%;
   }
 
   #date {
@@ -187,11 +187,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px;
   }
 
   .pileImg {
-    width: 100%;
+    width: 85%;
     aspect-ratio: 230/360;
   }
 
@@ -260,6 +259,7 @@ footer {
     aspect-ratio: 230/360;
     box-shadow: 0 0 5px 1px rgb(0, 0, 0);
   }
+
   .spreadRow5 {
     position: relative;
     display: flex;
@@ -303,6 +303,10 @@ footer {
     z-index: 1;
   }
 
+  #facedown:active {
+    scale: 95%;
+  }
+
   /* Right Box */
   #rightBox {
     width: 80%;
@@ -319,6 +323,11 @@ footer {
     width: 58px;
     aspect-ratio: 230/360;
     box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+    animation: opacityShow .4s 1;
+  }
+
+  .handCards:active {
+    scale: 95%;
   }
 
   /* Results */
@@ -333,6 +342,7 @@ footer {
     display: none /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #resultBox {
@@ -348,7 +358,7 @@ footer {
     overflow: auto;
     overflow-x: hidden;
     position: relative;
-    animation: opacityShow 0.5s 1;
+    animation: opacityShow 1s 1;
   }
 
   #resultTitle {
@@ -397,9 +407,16 @@ footer {
     overflow: auto;
   }
 
+  .buttonsDiv {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
   #resultCloseButton {
     background-color: rgb(68, 131, 78);
-    border: rgb(48, 99, 55) 6px solid;
+    border: rgb(48, 99, 55) 4px solid;
     color: white;
     font-weight: bold;
     font-size: 12px;
@@ -412,7 +429,33 @@ footer {
 
   #resultCloseButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #resultCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
+  }
+
+  #resultLanguageButton {
+    background-color: rgb(148, 148, 148);
+    border: rgb(104, 104, 104) 4px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    width: 150px;
+    aspect-ratio: 18/4;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultLanguageButton:hover {
+    background-color: rgb(104, 104, 104);
+  }
+
+  #resultLanguageButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* Info */
@@ -427,21 +470,22 @@ footer {
     display: flex /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #infoBox {
-    width: 90%;
-    height: 90%;
+    width: 93%;
+    height: 93%;
     background-color: white;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 0;
+    padding: 0px 10px;
     border-radius: 20px;
     overflow: auto;
     position: relative;
-    animation: opacityShow 0.5s 1;
+    animation: opacityShow 1s 1;
   }
 
   #infoTitle {
@@ -457,18 +501,18 @@ footer {
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 0 10px;
     box-shadow: 0 0 1px 1px grey;
     border-radius: 20px;
     padding: 10px;
     overflow: auto;
-    margin: 0 10px 10px 10px;
+    margin-bottom: 10px;
     height: 600px;
   }
 
   .instructions {
     margin: 0 0 10px 0;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: lighter;
   }
 
   .monthsDiv {
@@ -478,7 +522,7 @@ footer {
     box-shadow: 0 0 1px 1px grey;
     border-radius: 20px;
     overflow: auto;
-    margin: 0 10px 10px 10px;
+    margin-bottom: 10px;
     padding: 5px;
   }
 
@@ -497,7 +541,7 @@ footer {
     aspect-ratio: 920/360;
     padding: 2px 5px;
     grid-column-start: 1;
-    grid-column-end: 40;
+    grid-column-end: 50;
   }
 
   .monthInfo {
@@ -505,9 +549,9 @@ footer {
     flex-flow: column nowrap;
     justify-content: center;
     padding: 2px 5px;
-    grid-column-start: 40;
+    grid-column-start: 50;
     grid-column-end: 101;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .monthMeaning {
@@ -516,7 +560,7 @@ footer {
 
   #infoCloseButton {
     background-color: rgb(68, 131, 78);
-    border: rgb(48, 99, 55) 6px solid;
+    border: rgb(48, 99, 55) 4px solid;
     color: white;
     font-weight: bold;
     font-size: 12px;
@@ -529,7 +573,33 @@ footer {
 
   #infoCloseButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #infoCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
+  }
+
+  #infoLanguageButton {
+    background-color: rgb(148, 148, 148);
+    border: rgb(104, 104, 104) 4px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    width: 150px;
+    aspect-ratio: 18/4;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #infoLanguageButton:hover {
+    background-color: rgb(104, 104, 104);
+  }
+
+  #infoLanguageButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* Impossible */
@@ -544,6 +614,7 @@ footer {
     display: none /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #impossibleBox {
@@ -571,7 +642,7 @@ footer {
 
   #impossibleResetButton {
     background-color: rgb(68, 131, 78);
-    border: rgb(48, 99, 55) 6px solid;
+    border: rgb(48, 99, 55) 4px solid;
     color: white;
     font-weight: bold;
     font-size: 12px;
@@ -584,12 +655,16 @@ footer {
 
   #impossibleResetButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #impossibleResetButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   #impossibleCloseButton {
     background-color: rgb(248, 128, 128);
-    border: rgb(255, 17, 17) 6px solid;
+    border: rgb(255, 17, 17) 4px solid;
     color: white;
     font-weight: bold;
     font-size: 12px;
@@ -602,7 +677,11 @@ footer {
 
   #impossibleCloseButton:hover {
     background-color: rgb(255, 17, 17);
-    transition: 0.5s;
+  }
+
+  #impossibleCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* MISC */
@@ -615,12 +694,17 @@ footer {
     z-index: 3;
   }
 
+  .bounce {
+    animation: bounce .75s infinite;
+  }
+
   #emptyMessage {
     display: none;
     font-size: 15px;
   }
 
-  .clickToSeeResult {
+  #clickToSeeResult {
+    display: none;
     font-size: 15px;
     color: white;
     text-shadow: 2px 2px black;
@@ -640,7 +724,7 @@ footer {
   }
 
   body {
-    background-color: rgb(66, 129, 60);
+    background-color: rgb(0, 0, 0);
     background-image: url("../images/gung3.webp");
     background-size: fill;
     clear: both;
@@ -651,6 +735,8 @@ footer {
     font-weight: 400;
     font-style: normal;
     height: 100vh;
+    position: relative;
+    animation: opacityShow 1s 1;
   }
 
   /* Header */
@@ -702,6 +788,10 @@ footer {
     border: 1px black solid;
   }
 
+  #resetButton:active {
+    scale: 95%;
+  }
+
   #infoButton {
     width: 45px;
     aspect-ratio: 1/1;
@@ -712,6 +802,10 @@ footer {
     background-color: black;
     border-radius: 50%;
     border: 1px black solid;
+  }
+
+  #infoButton:active {
+    scale: 95%;
   }
 
   #date {
@@ -747,11 +841,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px;
+
   }
 
   .pileImg {
-    width: 100%;
+    width: 85%;
     aspect-ratio: 230/360;
   }
 
@@ -863,6 +957,9 @@ footer {
     z-index: 1;
   }
 
+  #facedown:active {
+    scale: 95%;
+  }
   /* Right Box */
   #rightBox {
     width: 80%;
@@ -879,6 +976,11 @@ footer {
     width: 80px;
     aspect-ratio: 230/360;
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    animation: opacityShow .4s 1;
+  }
+
+  .handCards:active {
+    scale: 95%;
   }
 
   /* Results */
@@ -893,6 +995,7 @@ footer {
     display: none /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #resultBox {
@@ -907,7 +1010,7 @@ footer {
     padding: 0 30px;
     overflow: auto;
     position: relative;
-    animation: opacityShow 0.5s 1;
+    animation: opacityShow 1s 1;
   }
 
   #resultTitle {
@@ -955,6 +1058,13 @@ footer {
     overflow: auto;
   }
 
+  .buttonsDiv {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
   #resultCloseButton {
     background-color: rgb(68, 131, 78);
     border: rgb(48, 99, 55) 6px solid;
@@ -970,7 +1080,33 @@ footer {
 
   #resultCloseButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #resultCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
+  }
+
+  #resultLanguageButton {
+    background-color: rgb(148, 148, 148);
+    border: rgb(104, 104, 104) 6px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 200px;
+    aspect-ratio: 18/4;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultLanguageButton:hover {
+    background-color: rgb(104, 104, 104);
+  }
+
+  #resultLanguageButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* Info */
@@ -985,6 +1121,7 @@ footer {
     display: flex /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #infoBox {
@@ -999,8 +1136,8 @@ footer {
     border-radius: 20px;
     padding: 0 30px;
     position: relative;
-    animation: opacityShow 0.5s 1;
     overflow: auto;
+    animation: opacityShow 1s 1;
   }
 
   #infoTitle {
@@ -1081,7 +1218,33 @@ footer {
 
   #infoCloseButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #infoCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
+  }
+
+  #infoLanguageButton {
+    background-color: rgb(148, 148, 148);
+    border: rgb(104, 104, 104) 6px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 200px;
+    aspect-ratio: 18/4;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #infoLanguageButton:hover {
+    background-color: rgb(104, 104, 104);
+  }
+
+  #infoLanguageButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* Impossible */
@@ -1096,6 +1259,7 @@ footer {
     display: none /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #impossibleBox {
@@ -1134,7 +1298,11 @@ footer {
 
   #impossibleResetButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #impossibleResetButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   #impossibleCloseButton {
@@ -1152,7 +1320,11 @@ footer {
 
   #impossibleCloseButton:hover {
     background-color: rgb(255, 17, 17);
-    transition: 0.5s;
+  }
+
+  #impossibleCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* MISC */
@@ -1165,12 +1337,17 @@ footer {
     z-index: 3;
   }
 
+  .bounce {
+    animation: bounce 1.5s infinite;
+  }
+
   #emptyMessage {
     display: none;
     font-size: 25px;
   }
 
-  .clickToSeeResult {
+  #clickToSeeResult {
+    display: none;
     font-size: 25px;
     color: white;
     text-shadow: 2px 2px black;
@@ -1256,7 +1433,11 @@ footer {
     opacity: 70%;
     background-color: black;
     border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    border: 1px black solid;
+  }
+
+  #resetButton:active {
+    scale: 95%;
   }
 
   #infoButton {
@@ -1268,7 +1449,11 @@ footer {
     opacity: 70%;
     background-color: black;
     border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    border: 1px black solid;
+  }
+
+  #infoButton:active {
+    scale: 95%;
   }
 
   #date {
@@ -1309,11 +1494,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px;
   }
 
   .pileImg {
-    width: 100%;
+    width: 85%;
     aspect-ratio: 230/360;
   }
 
@@ -1428,6 +1612,10 @@ footer {
     z-index: 1;
   }
 
+  #facedown:active {
+    scale: 95%;
+  }
+
   /* Right Box */
   #rightBox {
     width: 85%;
@@ -1444,6 +1632,11 @@ footer {
     width: 100px;
     aspect-ratio: 230/360;
     box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    animation: opacityShow .4s 1;
+  }
+
+  .handCards:active {
+    scale: 95%;
   }
 
   /* Results */
@@ -1458,6 +1651,7 @@ footer {
     display: none /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #resultBox {
@@ -1472,7 +1666,7 @@ footer {
     padding: 0 30px;
     overflow: auto;
     position: relative;
-    animation: opacityShow 0.5s 1;
+    animation: opacityShow 1s 1;
   }
 
   #resultTitle {
@@ -1519,6 +1713,13 @@ footer {
     justify-content: center;
   }
 
+  .buttonsDiv {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
   #resultCloseButton {
     background-color: rgb(68, 131, 78);
     border: rgb(48, 99, 55) 6px solid;
@@ -1534,7 +1735,33 @@ footer {
 
   #resultCloseButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+
+  #resultCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
+  }
+
+  #resultLanguageButton {
+    background-color: rgb(148, 148, 148);
+    border: rgb(104, 104, 104) 6px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 200px;
+    aspect-ratio: 18/4;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultLanguageButton:hover {
+    background-color: rgb(104, 104, 104);
+  }
+
+  #resultLanguageButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* Info */
@@ -1549,6 +1776,7 @@ footer {
     display: flex /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #infoBox {
@@ -1564,7 +1792,7 @@ footer {
     padding: 0 30px;
     overflow: auto;
     position: relative;
-    animation: opacityShow 0.5s 1;
+    animation: opacityShow 1s 1;
   }
 
   #infoTitle {
@@ -1590,7 +1818,8 @@ footer {
   .monthsDiv {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     box-shadow: 0 0 2px 2px grey;
     border-radius: 20px;
     overflow: auto;
@@ -1646,7 +1875,33 @@ footer {
 
   #infoCloseButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+  
+  #infoCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
+  }
+
+  #infoLanguageButton {
+    background-color: rgb(148, 148, 148);
+    border: rgb(104, 104, 104) 6px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 200px;
+    aspect-ratio: 18/4;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #infoLanguageButton:hover {
+    background-color: rgb(104, 104, 104);
+  }
+  
+  #infoLanguageButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* Impossible */
@@ -1661,6 +1916,7 @@ footer {
     display: none /*change to none later */;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   #impossibleBox {
@@ -1699,7 +1955,11 @@ footer {
 
   #impossibleResetButton:hover {
     background-color: rgb(48, 99, 55);
-    transition: 0.5s;
+  }
+  
+  #impossibleResetButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   #impossibleCloseButton {
@@ -1717,7 +1977,11 @@ footer {
 
   #impossibleCloseButton:hover {
     background-color: rgb(255, 17, 17);
-    transition: 0.5s;
+  }
+  
+  #impossibleCloseButton:active {
+    transform: translateY(1px);
+    transition: .1s;
   }
 
   /* MISC */
@@ -1730,12 +1994,17 @@ footer {
     z-index: 3;
   }
 
+  .bounce {
+    animation: bounce 1.5s infinite;
+  }
+
   #emptyMessage {
     display: none;
     font-size: 30px;
   }
 
-  .clickToSeeResult {
+  #clickToSeeResult {
+    display: none;
     font-size: 30px;
     color: white;
     text-shadow: 2px 2px black;

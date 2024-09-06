@@ -457,7 +457,6 @@ function shuffle(array) {
   return array;
 }
 let deck = shuffle(orderedDeck);
-console.log(deck);
 ////
 ////
 ////
@@ -495,6 +494,7 @@ function placeIntoA() {
     visibleCard.classList.add(`spreadRow${i}`);
     visibleCard.src = `${removedCard.img}`;
     document.querySelector(`#spreadA`).appendChild(visibleCard);
+    visibleCard.classList.add("scaleOnClick");
     clickableCards.push(removedCard);
   }
 }
@@ -514,6 +514,7 @@ function placeIntoB() {
     visibleCard.classList.add(`spreadRow${i}`);
     visibleCard.src = `${removedCard.img}`;
     document.querySelector(`#spreadB`).appendChild(visibleCard);
+    visibleCard.classList.add("scaleOnClick");
     clickableCards.push(removedCard);
   }
 }
@@ -533,6 +534,7 @@ function placeIntoC() {
     visibleCard.classList.add(`spreadRow${i}`);
     visibleCard.src = `${removedCard.img}`;
     document.querySelector(`#spreadC`).appendChild(visibleCard);
+    visibleCard.classList.add("scaleOnClick");
     clickableCards.push(removedCard);
   }
 }
@@ -552,6 +554,7 @@ function placeIntoD() {
     visibleCard.classList.add(`spreadRow${i}`);
     visibleCard.src = `${removedCard.img}`;
     document.querySelector(`#spreadD`).appendChild(visibleCard);
+    visibleCard.classList.add("scaleOnClick");
     clickableCards.push(removedCard);
   }
 }
@@ -564,6 +567,7 @@ function buildSpread() {
     placeIntoC();
     placeIntoD();
   }
+  console.log("000000 START 00000");
   console.log("columnA v");
   console.log(columnA);
   console.log("columnB v");
@@ -577,8 +581,10 @@ function buildSpread() {
 }
 // Shuffled spread loaded when site is refreshed
 buildSpread();
+
 console.log("clickableCards v");
 console.log(clickableCards);
+console.log("00000000000000000000000000000000000000000000000000");
 ////
 ////
 ////
@@ -586,8 +592,8 @@ console.log(clickableCards);
 ////
 // Deck and hand displayed when facedown card is clicked
 ////
-const facedown = document.querySelector("#facedown");
-const visibleHandContainer = document.querySelector("#visibleHandContainer");
+const facedown = document.getElementById("facedown");
+const visibleHandContainer = document.getElementById("visibleHandContainer");
 // Array of cards displayed
 let hand = [];
 // Create facedown card image in div
@@ -600,6 +606,8 @@ facedown.addEventListener("click", placeCard);
 function placeCard() {
   // if-case for when deck is depleted
   if (deck.length === 0 && hand.length != 0) {
+    // Stop circle bounce
+    facedown.classList.remove("bounce");
     // Removes unused hand from clickableCards
     hand.forEach((x) => {
       if (clickableCards.findIndex((index) => index === x) !== -1) {
@@ -625,13 +633,14 @@ function placeCard() {
     facedown.appendChild(back);
 
     //console logs
+    console.log("000000 Deck Cycled 00000");
     console.log("deck v");
     console.log(deck);
     console.log("hand v");
     console.log(hand);
     console.log("clickableCards v");
     console.log(clickableCards);
-    console.log("deck cycled");
+    console.log("00000000000000000000000000000000000000000000000000");
 
     // Removes "greyed" class from elements before hand container div is emptied because memory will retain the class name even after "deleting" an element
     let greyedElements = document.getElementsByClassName("greyed");
@@ -649,6 +658,10 @@ function placeCard() {
       // Remove facedown
       document.getElementById("handContainer").innerHTML = "";
     }
+  }
+  // else-case for when deck is NOT depleted
+  else if (deck.length === 0 && hand.length === 0) {
+    document.getElementById("handContainer").innerHTML = "";
   }
   // else-case for when deck is NOT depleted
   else {
@@ -697,25 +710,33 @@ function placeCard() {
       });
     }
 
+    console.log("000000 Facedown Pressed 00000");
     console.log("deck v");
     console.log(deck);
     console.log("hand v");
     console.log(hand);
-    console.log("filtered v");
+    console.log("unusableCards v");
     console.log(unusableCards);
     console.log("clickableCards v");
     console.log(clickableCards);
+    console.log("lastTwoHand v");
+    console.log(lastTwoHand);
+    console.log("00000000000000000000000000000000000000000000000000");
 
+    //
     // Replace facedown card to blank when cards run out
     if (deck.length === 0) {
       facedown.innerHTML = "";
       let circle = document.createElement("img");
       circle.src = "../images/circle.webp";
       facedown.appendChild(circle);
+      // Make circle bounce
+      facedown.classList.add("bounce");
 
+      //
       // Check columns for matching pair
       let duplicateCheckArrayColumns = [];
-
+      // if a column is not empty, the displayed card at the end is put into the duplicateCheckArrayColumns
       if (columnA.length > 0) {
         duplicateCheckArrayColumns.push(columnA[columnA.length - 1].month);
       }
@@ -729,25 +750,26 @@ function placeCard() {
         duplicateCheckArrayColumns.push(columnD[columnD.length - 1].month);
       }
 
+      console.log("000000 Check Solvable 00000");
       console.log("duplicateCheckArrayColumns v");
       console.log(duplicateCheckArrayColumns);
       // A Set only stores unique values, so if the size of the Set is smaller than the length of the array, there is a duplicate.
-      let hasDuplicateColumns =
-        new Set(duplicateCheckArrayColumns).size !==
+      let noMatchInColumns =
+        new Set(duplicateCheckArrayColumns).size ===
         duplicateCheckArrayColumns.length;
-
-      // Columns not empty and no matching pair in columns
-      if (
-        columnA.length + columnB.length + columnC.length + columnD.length >
-        0
-      ) {
-        if (hasDuplicateColumns !== true) {
+      // At least 1 column available and no matching pair in columns
+      if (duplicateCheckArrayColumns.length !== 0) {
+        // if column cards are of different months
+        if (noMatchInColumns == true) {
           // Look to see if any of hand cards match the columns
           let handMonths = [];
           if (hand.length !== 0) {
             hand.forEach((x) => {
               handMonths.push(x.month);
             });
+          } else {
+            // if hand is empty, a decoy is added so there is at least something to check against
+            handMonths.push("decoy");
           }
           let hasMatch = duplicateCheckArrayColumns.some((item) =>
             handMonths.includes(item)
@@ -755,17 +777,21 @@ function placeCard() {
 
           console.log("handMonths v");
           console.log(handMonths);
+
           /// if there is no match between hand and column cards
           if (hasMatch !== true) {
             // Display imposiblle message
             document.getElementById("impossibleOverlay").style.display = "flex";
           } else {
             // else empty the possibility checking arrays
-            console.log("still possible");
+            console.log("Still Possible");
+            console.log("00000000000000000000000000000000000000000000000000");
             duplicateCheckArrayColumns.length = 0;
             handMonths.length = 0;
           }
         } else {
+          console.log("Still Possible");
+          console.log("00000000000000000000000000000000000000000000000000");
           duplicateCheckArrayColumns.length = 0;
         }
       }
@@ -777,6 +803,14 @@ function placeCard() {
 ////
 ////
 
+///
+/// this is used in checkPair function but is set up here so onDomChange can change it live
+///
+let lastTwoHand = [];
+///
+///
+///
+
 ////
 // Detect changes to DOM to enable event listener to listen live
 ////
@@ -787,7 +821,7 @@ function onDomChange(mutationsList, observer) {
       let selector = document.getElementById(`${x.month + x.rank}`);
       selector.removeEventListener("click", checkPair);
     });
-    //Assigns event listener to clickable cards from clickableCards array
+    // Assigns event listener to clickable cards from clickableCards array
     clickableCards.forEach((x) => {
       let selector = document.getElementById(`${x.month + x.rank}`);
       selector.addEventListener("click", checkPair);
@@ -800,6 +834,12 @@ function onDomChange(mutationsList, observer) {
           selector.classList.add("greyed");
         }
       });
+    }
+    // Clear out lastTwoHand and update. Only fires when hand.length > 2 to avoid undefined
+    lastTwoHand.length = 0;
+    if (hand.length >= 2) {
+      lastTwoHand.push(hand[hand.length - 2]);
+      lastTwoHand.push(hand[hand.length - 1]);
     }
   }
 }
@@ -926,12 +966,18 @@ function targetPileArray() {
 let pair = [];
 
 function checkPair(event) {
+  // Looks at DOM element id (which is a string) and turns it into an object of same name
   let strToObject = clickableCards.find((strToObject) =>
     strToObject.name.includes(`${event.target.id}`)
   );
   pair.push(strToObject);
   document.getElementById(strToObject.name).classList.add("glowing");
+
+  // Console log objects in pair
+  console.log("pair v");  
   console.log(pair);
+  console.log("00000000000000000000000000000000000000000000000000");
+
   // Prevents facedown card from being clicked when a card is selected
   facedown.removeEventListener("click", placeCard);
   // When two cards are clicked
@@ -947,52 +993,103 @@ function checkPair(event) {
       // Image of second card clicked is displayed
       pileImg.src = pair[1].img;
 
-      // Restructures the spread and hand on display and in arrays
-      pair.forEach((x) => {
-        //Un-greys newly clickable cards and reinstates previously unusable card to clickable card
-        if (unusableCards.length > 0) {
-          // if the card removed was the FIRST card in the hand
-          if (x.name === hand[0].name) {
-            // First card of the greyed out card would be reinstated
-            let reinstatedCard = unusableCards.shift();
-            document
-              .getElementById(reinstatedCard.name)
-              .classList.remove("greyed");
-            clickableCards.push(reinstatedCard);
-          }
-          // if the card removed was the LAST card in the hand AND the second-to-last card of greyed cards WAS NOT a match to the last card of greyed cards
-          else if (
-            x.name === hand[hand.length - 1].name &&
-            hand[hand.length - 1].month !== hand[hand.length - 2].month &&
-            hand[hand.length - 2].month !== hand[hand.length - 3].month
-          ) {
-            // Last card of the greyed out card would be reinstated
+      //
+      // Reinstates cards from usuableCards to clickableCards and un-greys them
+      //
+      // if there is 1 greyed out card
+      if (unusableCards.length === 1) {
+        // if the one or both cards in pair is from hand
+        if (hand.includes(pair[0]) || hand.includes(pair[1])) {
+          let reinstatedCard = unusableCards.shift();
+          document
+            .getElementById(reinstatedCard.name)
+            .classList.remove("greyed");
+          clickableCards.push(reinstatedCard);
+        }
+      }
+      //
+      // if there is more than 1 greyed out card
+      else if (unusableCards.length > 1) {
+        //
+        // if the pair are the LAST TWO of the hand (implying the last two were of same months)
+        if (lastTwoHand.includes(pair[0]) && lastTwoHand.includes(pair[1])) {
+          // a bcde FF or a bcdef FF
+          // reinstated one
+          let reinstatedCard = unusableCards.pop();
+          document
+            .getElementById(reinstatedCard.name)
+            .classList.remove("greyed");
+          clickableCards.push(reinstatedCard);
+          // a bcdee FF or a bcdeff FF
+          // reinstate another
+          if (hand[hand.length - 3].month === hand[hand.length - 4].month) {
             let reinstatedCard = unusableCards.pop();
             document
               .getElementById(reinstatedCard.name)
               .classList.remove("greyed");
             clickableCards.push(reinstatedCard);
           }
-          // if the card removed was the LAST card in the hand AND the second-to-last card of greyed cards WAS a match to the last card of greyed cards
-          else if (
-            x.name === hand[hand.length - 1].name &&
-            hand[hand.length - 1].month !== hand[hand.length - 2].month &&
-            hand[hand.length - 2].month === hand[hand.length - 3].month
-          ) {
-            let reinstatedCardOne = unusableCards.pop();
-            document
-              .getElementById(reinstatedCardOne.name)
-              .classList.remove("greyed");
-            clickableCards.push(reinstatedCardOne);
-
-            let reinstatedCardTwo = unusableCards.pop();
-            document
-              .getElementById(reinstatedCardTwo.name)
-              .classList.remove("greyed");
-            clickableCards.push(reinstatedCardTwo);
-          } else {
-          }
+        //
+        // if only one of the pair card is from hand or if one is the FIRST of hand OR LAST of hand OR SECOND-FROM-LAST (not LAST *AND* SECOND-FROM-LAST)
+        } else {
+          // This runs twice
+          pair.forEach((x) => {
+            //
+            // if one of the pair card is the FIRST of hand
+            if (x.name === hand[0].name) {
+              // reinstate the first card of the unusableCards into clickableCards
+              let reinstatedCard = unusableCards.shift();
+              document
+                .getElementById(reinstatedCard.name)
+                .classList.remove("greyed");
+              clickableCards.push(reinstatedCard);
+            //
+            // if one of the pair card is the LAST of hand
+            } else if (x.name === hand[hand.length - 1].name) {
+              // a bcde F
+              // reinstated one card from the end of hand from unusableCards into clickableCards
+              if (hand[hand.length - 1].month !== hand[hand.length - 2].month) {
+                let reinstatedCard = unusableCards.pop();
+                document
+                  .getElementById(reinstatedCard.name)
+                  .classList.remove("greyed");
+                clickableCards.push(reinstatedCard);
+                // a bcdee F
+                // reinstated another card from the end of hand from unusableCards into clickableCards
+                if (
+                  hand[hand.length - 2].month === hand[hand.length - 3].month
+                ) {
+                  let reinstatedCard = unusableCards.pop();
+                  document
+                    .getElementById(reinstatedCard.name)
+                    .classList.remove("greyed");
+                  clickableCards.push(reinstatedCard);
+                }
+              } else {
+                // a bcde fF or a bcdee fF do nothing
+              }
+            } else if (x.name === hand[hand.length - 2].name) {
+              // a bcde Ff do nothing
+              // a bcdee Ff do nothing
+              // a bcdef Ff or a bcdeff Ff
+              // reinstated one card from the end of hand from unusableCards into clickableCards
+              if (hand[hand.length - 2].month === hand[hand.length - 3].month) {
+                let reinstatedCard = unusableCards.pop();
+                document
+                  .getElementById(reinstatedCard.name)
+                  .classList.remove("greyed");
+                clickableCards.push(reinstatedCard);
+              }
+            }
+          });
         }
+      }
+
+      
+
+      // Restructures the spread and hand on display and in arrays
+      // This runs twice since it's a PAIR
+      pair.forEach((x) => {
         // Removes paired cards from 4 spread columns arrays or hand arrays AND clickable array AND displays the next card in columns
         if (columnA.includes(x)) {
           let movingCard = columnA.pop();
@@ -1002,6 +1099,7 @@ function checkPair(event) {
             clickableCards.push(nextCard);
             let cardImg = document.getElementById(nextCard.name);
             cardImg.src = nextCard.img;
+            cardImg.classList.add("scaleOnClick");
           }
         } else if (columnB.includes(x)) {
           let movingCard = columnB.pop();
@@ -1011,6 +1109,7 @@ function checkPair(event) {
             clickableCards.push(nextCard);
             let cardImg = document.getElementById(nextCard.name);
             cardImg.src = nextCard.img;
+            cardImg.classList.add("scaleOnClick");
           }
         } else if (columnC.includes(x)) {
           let movingCard = columnC.pop();
@@ -1020,6 +1119,7 @@ function checkPair(event) {
             clickableCards.push(nextCard);
             let cardImg = document.getElementById(nextCard.name);
             cardImg.src = nextCard.img;
+            cardImg.classList.add("scaleOnClick");
           }
         } else if (columnD.includes(x)) {
           let movingCard = columnD.pop();
@@ -1029,6 +1129,7 @@ function checkPair(event) {
             clickableCards.push(nextCard);
             let cardImg = document.getElementById(nextCard.name);
             cardImg.src = nextCard.img;
+            cardImg.classList.add("scaleOnClick");
           }
         } else if (hand.includes(x)) {
           let movingCard = hand.splice(
@@ -1045,6 +1146,15 @@ function checkPair(event) {
         }
       });
 
+      console.log("000000 Pair Matched 00000");
+      console.log("pileA v");
+      console.log(pileA);
+      console.log("pileB v");
+      console.log(pileB);
+      console.log("pileC v");
+      console.log(pileC);
+      console.log("pileD v");
+      console.log(pileD);
       console.log("columnA v");
       console.log(columnA);
       console.log("columnB v");
@@ -1057,23 +1167,19 @@ function checkPair(event) {
       console.log(hand);
       console.log("clickableCards v");
       console.log(clickableCards);
-      console.log("pileA v");
-      console.log(pileA);
-      console.log("pileB v");
-      console.log(pileB);
-      console.log("pileC v");
-      console.log(pileC);
-      console.log("pileD v");
-      console.log(pileD);
+      console.log("unusableCards v");
+      console.log(unusableCards);
+      console.log("lastTwoHand v")
+      console.log(lastTwoHand)
+      console.log("00000000000000000000000000000000000000000000000000");
 
       // Remove card from DOM
       pair.forEach((x) => {
         document.getElementById(x.name).remove();
       });
 
-      // Empties pair array
+      // Empty pair array for the next pair
       pair.length = 0;
-      console.log(pair);
 
       // Reverses "Prevents facedown card from being clicked when a card is selected"
       facedown.addEventListener("click", placeCard);
@@ -1089,16 +1195,16 @@ function checkPair(event) {
         document.getElementById(x.name).classList.remove("glowing");
       });
 
-      // Empties pair array
+      // Empty pair array for the next pair
       pair.length = 0;
-      console.log(pair);
+      console.log("Not a Match");
 
       // Reverses "Prevents facedown card from being clicked when a card is selected"
       facedown.addEventListener("click", placeCard);
     }
     // Prevents pair array from containing more than 2
   } else if (pair.length > 2) {
-    // Empties pair array
+      // Empty pair array for the next pair
     pair.length = 0;
 
     // Reverses "Prevents facedown card from being clicked when a card is selected"
@@ -1116,11 +1222,11 @@ function updateDOMAtEnd() {
   // Remove facedown
   document.getElementById("handContainer").innerHTML = "";
   // Empty spread container and display "click to see result"
-  document.getElementById("spreadContainer").innerHTML = "";
-  let clickToSeeResult = document.createElement("h4");
-  clickToSeeResult.classList.add("clickToSeeResult");
-  clickToSeeResult.textContent = "▲	Click to See Result ▲";
-  document.getElementById("spreadContainer").appendChild(clickToSeeResult);
+  document.getElementById("spreadA").remove();
+  document.getElementById("spreadB").remove();
+  document.getElementById("spreadC").remove();
+  document.getElementById("spreadD").remove();
+  document.getElementById("clickToSeeResult").style.display = "block";
   // Make piles glow and clickable
   divPileA.classList.add("glowing");
   divPileB.classList.add("glowing");
@@ -1132,8 +1238,10 @@ function updateDOMAtEnd() {
   divPileD.addEventListener("click", openPile);
 }
 
+// Array of four of a kind months
 let fourMatchedAll = [];
 
+// Pushes the months of all the cards in the piles into new arrays
 function openPile() {
   let monthsPileA = [];
   pileA.forEach((x) => {
@@ -1152,6 +1260,7 @@ function openPile() {
     monthsPileD.push(x.month);
   });
 
+  // Filters out four of a kind months into fourMatchedAll
   function findItemsAppearingFourTimes(arr) {
     const itemCounts = {};
 
@@ -1173,8 +1282,10 @@ function openPile() {
   findItemsAppearingFourTimes(monthsPileC);
   findItemsAppearingFourTimes(monthsPileD);
 
+  // Displays the result pop-up
   document.querySelector("#endingOverlay").style.display = "flex";
 
+  // Displays all the cards from each pile
   let pileAImgDiv = document.querySelector("#pileAImgDiv");
   let pileBImgDiv = document.querySelector("#pileBImgDiv");
   let pileCImgDiv = document.querySelector("#pileCImgDiv");
@@ -1210,6 +1321,7 @@ function openPile() {
     pileDImgDiv.appendChild(resultCardImg);
   });
 
+  // Displays the four of a kind months and meaning
   const monthsDiv = document.getElementById("resultMonthsDiv");
 
   console.log(fourMatchedAll);
@@ -1221,5 +1333,107 @@ function openPile() {
   } else {
     let noFourMatchMessage = document.getElementById("emptyMessage");
     noFourMatchMessage.style.display = "block";
+  }
+}
+////
+////
+////
+
+////
+// English/Korean options
+////
+document
+  .getElementById("infoLanguageButton")
+  .addEventListener("click", changeLanguage);
+
+document
+  .getElementById("resultLanguageButton")
+  .addEventListener("click", changeLanguage);
+
+// Default language is English
+let isEnglish = true;
+
+function changeLanguage() {
+  // if page is in English
+  if (isEnglish === true) {
+    isEnglish = false;
+    console.log("language: Korean");
+    document.getElementById("resultTitle").textContent = "결과/풀이";
+    document.getElementById("emptyMessage").textContent =
+      "같은 달의 패 4장이 모으지 못했습니다. 다시 시도 하십시오";
+    document.getElementById("resultCloseButton").textContent = "다시 하기";
+    document.getElementById("infoTitle").textContent = "화투점 설명서";
+    document.getElementById("paragraphOne").textContent =
+      "화투 패 48장은 1월부터 12월까지 달을 나누고, 각 달에 해당하는 패 4장으로 구성됩니다. 각 달은 운세에 대한 의미를 담고 있습니다.";
+    document.getElementById("paragraphTwo").textContent =
+      "패를 같은 달로 짝지어 화면 상단에 위치한 자리에 차례대로 모으시면 됩니다. 같은 달의 패 4장이 한 더미에 모두 모이면, 그 달이 오늘의 운세를 나타냅니다.";
+    document.getElementById("paragraphThree").textContent =
+      "모든 패가 모아질 때까지 뒷면이 보이는 패를 선택하면 화투 1장씩 뽑힙니다. 선택할 수 없는 패는 투명하게 표시됩니다. 패를 모두 모으는 것이 불가능한 경우도 존재합니다.";
+    document.getElementById("infoCloseButton").textContent = "진행하기";
+    document.getElementById("impossibleTitle").textContent =
+      "패를 모두 모으는 것이 불가능합니다. 다시 시도 하십시오";
+    document.getElementById("impossibleResetButton").textContent = "다시 하기";
+    document.getElementById("impossibleCloseButton").textContent = "닫기";
+    document.getElementById("clickToSeeResult").textContent =
+      "▲ 결과/풀이 보기 ▲";
+    document.getElementById("janMeaning").textContent = "소식을 듣는다";
+    document.getElementById("febMeaning").textContent = "애인을 만난다";
+    document.getElementById("marMeaning").textContent = "나들이를 한다";
+    document.getElementById("aprMeaning").textContent =
+      "주변인과 가벼운 다툼이 있다";
+    document.getElementById("mayMeaning").textContent =
+      "외식을 하던가 사람을 만난다";
+    document.getElementById("junMeaning").textContent = "기쁜 일이 생긴다";
+    document.getElementById("julMeaning").textContent = "뜻밖에 횡재를 한다";
+    document.getElementById("augMeaning").textContent = "돈이 들어온다";
+    document.getElementById("sepMeaning").textContent = "술 마실 일이 생긴다";
+    document.getElementById("octMeaning").textContent = "근심 걱정이 생긴다";
+    document.getElementById("novMeaning").textContent =
+      "돈을 쓰거나 돈 나갈 일이 생긴다";
+    document.getElementById("decMeaning").textContent = "손님이 찾아온다";
+  } else if (isEnglish !== true) {
+    // if page is in English
+    isEnglish = true;
+    console.log("language: English");
+    document.getElementById("resultTitle").textContent = "Results";
+    document.getElementById("emptyMessage").textContent =
+      "No Four of a Kind. Please Try Again.";
+    document.getElementById("resultCloseButton").textContent = "Play Again";
+    document.getElementById("infoTitle").textContent = "Hwatu Tarot Guide";
+    document.getElementById("paragraphOne").textContent =
+      "Hwatu card deck has 48 cards. There are 12 kinds corresponding to the months of the year with each kind having 4 cards. Each kind has a meaning similar to tarot.";
+    document.getElementById("paragraphTwo").textContent =
+      "Match the cards into pairs of the same kind until all 48 cards are placed into the four piles above the spread. If all 4 cards of a kind are in the same pile, that kind is your fortune for the day.";
+    document.getElementById("paragraphThree").textContent =
+      "Like you would in a game of Solitaire, click the face-down card to pull out a card. Deck will be cycled until empty. Unusable cards will be half visible. If the spread is impossible to empty, simply try again.";
+    document.getElementById("infoCloseButton").textContent = "Continue";
+    document.getElementById("impossibleTitle").textContent =
+      "Unsolvable Spread. Please Try Again";
+    document.getElementById("impossibleResetButton").textContent = "Play Again";
+    document.getElementById("impossibleCloseButton").textContent = "Close";
+    document.getElementById("clickToSeeResult").textContent =
+      "▲ Click to See Result ▲";
+
+    document.getElementById("janMeaning").textContent =
+      "Receive news or tidings";
+    document.getElementById("febMeaning").textContent = "Meet your beloved";
+    document.getElementById("marMeaning").textContent =
+      "Set out on a brief journey";
+    document.getElementById("aprMeaning").textContent =
+      "Experience a minor conflict";
+    document.getElementById("mayMeaning").textContent =
+      "Dine out or meet with someone";
+    document.getElementById("junMeaning").textContent =
+      "Welcome a happy occasion";
+    document.getElementById("julMeaning").textContent =
+      "Stumble upon an unexpected windfall";
+    document.getElementById("augMeaning").textContent = "Acquire money";
+    document.getElementById("sepMeaning").textContent =
+      "Encounter an occasion for a drink";
+    document.getElementById("octMeaning").textContent =
+      "Face worries or concerns";
+    document.getElementById("novMeaning").textContent =
+      "Spend money or come across an expense";
+    document.getElementById("decMeaning").textContent = "Have a visitor";
   }
 }

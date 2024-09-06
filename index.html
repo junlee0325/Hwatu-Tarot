@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
 	<!-- thumbnail -->
-	<meta property='og:title' content='Hwatu Tarot'/>
+	<meta property='og:title' content='Hwatu Tarot' />
 	<meta property='og:image' content='images/thumbnail.webp' />
 	<meta property='og:url' content='https://hwatu-tarot.com/' />
 	<meta property='og:image:width' content='1200' />
@@ -46,28 +46,19 @@
 			<div id="pileD" class="pileClass"></div>
 		</div>
 		<div id="spreadContainer">
-			<div id="spreadA" class="columnClass">
-
-			</div>
-			<div id="spreadB" class="columnClass">
-
-			</div>
-			<div id="spreadC" class="columnClass">
-
-			</div>
-			<div id="spreadD" class="columnClass">
-
-			</div>
+			<h4 id="clickToSeeResult">▲ Click to See Result ▲</h4>
+			<div id="spreadA" class="columnClass"></div>
+			<div id="spreadB" class="columnClass"></div>
+			<div id="spreadC" class="columnClass"></div>
+			<div id="spreadD" class="columnClass"></div>
 		</div>
 	</div>
 	<div id="handContainer">
 		<div id="leftBox">
 			<div id="facedown" class="outline"></div>
-
 		</div>
 		<div id="rightBox">
-			<div id="visibleHandContainer">
-			</div>
+			<div id="visibleHandContainer"></div>
 		</div>
 	</div>
 	<div id="endingOverlay">
@@ -82,114 +73,121 @@
 			<div class="monthsDiv" id="resultMonthsDiv">
 				<h4 id="emptyMessage">No Four of a Kind. Please Try Again.</h4>
 			</div>
-			<button id="resultCloseButton">Play Again</button>
+			<div class="buttonsDiv">
+				<button id="resultCloseButton">Play Again</button>
+				<button id="resultLanguageButton">English / 한국어</button>
+			</div>
 		</div>
 	</div>
 	<div id="infoOverlay">
 		<div id="infoBox">
 			<h2 id="infoTitle">Hwatu Tarot Guide</h2>
 			<div id="instructionDiv">
-				<h4 class="instructions">Hwatu card deck has 48 cards. There are 12 kinds corresponding to the months of
-					the year with each kind having 4 cards. Each kind has a meaning similar to tarot.</h4>
-				<h4 class="instructions">Match the cards into pairs of the same kind until all 48 cards are placed into
-					the four piles above the spread. If all 4 cards of a kind are in the same pile, that kind is your
-					fortune for the day.</h4>
-				<h4 class="instructions">Like you would in a game of Solitaire, click the face-down card to pull out a
-					card. Deck will be cycled until empty. Unclickable cards will be greyed out. Click on the pile at
-					the end to see the result. If the spread is impossible to empty, simply reset and try again.</h4>
+				<h4 class="instructions" id="paragraphOne">Hwatu card deck has 48 cards. There are 12 kinds
+					corresponding to the months of the year with each kind having 4 cards. Each kind has a meaning
+					similar to tarot.</h4>
+				<h4 class="instructions" id="paragraphTwo">Match the cards into pairs of the same kind until all 48
+					cards are placed into the four piles above the spread. If all 4 cards of a kind are in the same
+					pile, that kind is your fortune for the day.</h4>
+				<h4 class="instructions" id="paragraphThree">Like you would in a game of Solitaire, click the face-down
+					card to pull out a card. Deck will be cycled until empty. Unusable cards will be half visible. If
+					the spread is impossible to empty, simply try again.</h4>
 			</div>
 			<div class="monthsDiv">
 				<div class="monthRow" id="jan">
 					<img class="monthImg" src="images/jan.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">January | Pine 솔</span>
-						<span class="monthMeaning">Receive news or tidings</span>
+						<span class="monthTitle">1월 January | Pine 솔</span>
+						<span class="monthMeaning" id="janMeaning">Receive news or tidings</span>
 					</div>
 				</div>
 				<div class="monthRow" id="feb">
 					<img class="monthImg" src="images/feb.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">February | Plum Blossom 매화</span>
-						<span class="monthMeaning">Meet your beloved</span>
+						<span class="monthTitle">2월 February | Plum Blossom 매화</span>
+						<span class="monthMeaning" id="febMeaning">Meet your beloved</span>
 					</div>
 				</div>
 				<div class="monthRow" id="mar">
 					<img class="monthImg" src="images/mar.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">March | Cherry Blossom 벚꽃</span>
-						<span class="monthMeaning">Set out on a brief journey</span>
+						<span class="monthTitle">3월 March | Cherry Blossom 벚꽃</span>
+						<span class="monthMeaning" id="marMeaning">Set out on a brief journey</span>
 					</div>
 				</div>
 				<div class="monthRow" id="apr">
 					<img class="monthImg" src="images/apr.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">April | Wisteria 흑싸리</span>
-						<span class="monthMeaning">Experience a minor conflict</span>
+						<span class="monthTitle">4월 April | Wisteria 흑싸리</span>
+						<span class="monthMeaning" id="aprMeaning">Experience a minor conflict</span>
 					</div>
 				</div>
 				<div class="monthRow" id="may">
 					<img class="monthImg" src="images/may.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">May | Iris 난초</span>
-						<span class="monthMeaning">Dine out or meet with someone</span>
+						<span class="monthTitle">5월 May | Iris 난초</span>
+						<span class="monthMeaning" id="mayMeaning">Dine out or meet with someone</span>
 					</div>
 				</div>
 				<div class="monthRow" id="jun">
 					<img class="monthImg" src="images/jun.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">June | Peony 목단</span>
-						<span class="monthMeaning">Welcome a happy occasion</span>
+						<span class="monthTitle">6월 June | Peony 목단</span>
+						<span class="monthMeaning" id="junMeaning">Welcome a happy occasion</span>
 					</div>
 				</div>
 				<div class="monthRow" id="jul">
 					<img class="monthImg" src="images/jul.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">July | Bush Clover 홍싸리</span>
-						<span class="monthMeaning">Stumble upon an unexpected windfall</span>
+						<span class="monthTitle">7월 July | Bush Clover 홍싸리</span>
+						<span class="monthMeaning" id="julMeaning">Stumble upon an unexpected windfall</span>
 					</div>
 				</div>
 				<div class="monthRow" id="aug">
 					<img class="monthImg" src="images/aug.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">August | Empty Hill 공산</span>
-						<span class="monthMeaning">Acquire money</span>
+						<span class="monthTitle">8월 August | Empty Hill 공산</span>
+						<span class="monthMeaning" id="augMeaning">Acquire money</span>
 					</div>
 				</div>
 				<div class="monthRow" id="sep">
 					<img class="monthImg" src="images/sep.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">September | Chrysanthemum 국화</span>
-						<span class="monthMeaning">Encounter an occasion for a drink</span>
+						<span class="monthTitle">9월 September | Chrysanthemum 국화</span>
+						<span class="monthMeaning" id="sepMeaning">Encounter an occasion for a drink</span>
 					</div>
 				</div>
 				<div class="monthRow" id="oct">
 					<img class="monthImg" src="images/oct.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">October | Maple 단풍</span>
-						<span class="monthMeaning">Face worries or concerns</span>
+						<span class="monthTitle">10월 October | Maple 단풍</span>
+						<span class="monthMeaning" id="octMeaning">Face worries or concerns</span>
 					</div>
 				</div>
 				<div class="monthRow" id="nov">
 					<img class="monthImg" src="images/nov.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">November | Paulownia 오동</span>
-						<span class="monthMeaning">Spend money or come across an expense</span>
+						<span class="monthTitle">11월 November | Paulownia 오동</span>
+						<span class="monthMeaning" id="novMeaning">Spend money or come across an expense</span>
 					</div>
 				</div>
 				<div class="monthRow" id="dec">
 					<img class="monthImg" src="images/dec.webp">
 					<div class="monthInfo">
-						<span class="monthTitle">December | Rain 비</span>
-						<span class="monthMeaning">Have a visitor</span>
+						<span class="monthTitle">12월 December | Rain 비</span>
+						<span class="monthMeaning" id="decMeaning">Have a visitor</span>
 					</div>
 				</div>
 			</div>
-			<button id="infoCloseButton">Continue to Game</button>
+			<div class="buttonsDiv">
+				<button id="infoCloseButton">Continue</button>
+				<button id="infoLanguageButton">English / 한국어</button>
+			</div>
 		</div>
 	</div>
 	<div id="impossibleOverlay">
 		<div id="impossibleBox">
-			<h2 id="impossibleTitle">No More Matches Available. Please Try Again</h2>
+			<h2 id="impossibleTitle">Unsolvable Spread. Please Try Again</h2>
 			<button id="impossibleResetButton">Play Again</button>
 			<button id="impossibleCloseButton">Close</button>
 		</div>
