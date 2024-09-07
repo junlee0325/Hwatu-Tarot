@@ -298,7 +298,7 @@ footer {
     aspect-ratio: 230/360;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    box-shadow: 0 0 3px 1px rgb(255, 255, 255);
     margin-top: 15px;
     z-index: 1;
   }
@@ -366,7 +366,6 @@ footer {
     margin-bottom: 10px;
     font-size: 20px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #resultCardsDiv {
@@ -493,7 +492,6 @@ footer {
     margin-bottom: 10px;
     font-size: 20px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #instructionDiv {
@@ -513,6 +511,10 @@ footer {
     margin: 0 0 10px 0;
     font-size: 14px;
     font-weight: lighter;
+  }
+
+  #paragraphThree {
+    padding: 0 5px 0 15px;
   }
 
   .monthsDiv {
@@ -541,7 +543,7 @@ footer {
     aspect-ratio: 920/360;
     padding: 2px 5px;
     grid-column-start: 1;
-    grid-column-end: 50;
+    grid-column-end: 45;
   }
 
   .monthInfo {
@@ -549,7 +551,7 @@ footer {
     flex-flow: column nowrap;
     justify-content: center;
     padding: 2px 5px;
-    grid-column-start: 50;
+    grid-column-start: 45;
     grid-column-end: 101;
     font-size: 15px;
   }
@@ -636,7 +638,6 @@ footer {
     margin-bottom: 15px;
     font-size: 20px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
     text-align: center;
   }
 
@@ -952,7 +953,7 @@ footer {
     aspect-ratio: 230/360;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    box-shadow: 0 0 3px 1px rgb(255, 255, 255);
     margin-top: 15px;
     z-index: 1;
   }
@@ -1018,7 +1019,6 @@ footer {
     margin-bottom: 15px;
     font-size: 35px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #resultCardsDiv {
@@ -1145,7 +1145,6 @@ footer {
     margin-bottom: 15px;
     font-size: 35px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #instructionDiv {
@@ -1158,6 +1157,10 @@ footer {
   .instructions {
     margin: 0 0 15px 0;
     font-size: 18px;
+  }
+
+  #paragraphThree {
+    padding: 15px;
   }
 
   .monthsDiv {
@@ -1186,7 +1189,7 @@ footer {
     aspect-ratio: 920/360;
     padding: 2px 5px;
     grid-column-start: 1;
-    grid-column-end: 50;
+    grid-column-end: 40;
   }
 
   .monthInfo {
@@ -1194,7 +1197,7 @@ footer {
     flex-flow: column nowrap;
     justify-content: center;
     padding: 2px 5px;
-    grid-column-start: 50;
+    grid-column-start: 40;
     grid-column-end: 101;
     font-size: 20px;
   }
@@ -1280,7 +1283,6 @@ footer {
     font-size: 35px;
     text-align: center;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #impossibleResetButton {
@@ -1608,7 +1610,7 @@ footer {
     aspect-ratio: 230/360;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+    box-shadow: 0 0 3px 1px rgb(255, 255, 255);
     z-index: 1;
   }
 
@@ -1674,7 +1676,6 @@ footer {
     margin-bottom: 15px;
     font-size: 40px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #resultCardsDiv {
@@ -1800,7 +1801,6 @@ footer {
     margin-bottom: 15px;
     font-size: 40px;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #instructionDiv {
@@ -1813,6 +1813,10 @@ footer {
   .instructions {
     margin: 0 0 15px 0;
     font-size: 18px;
+  }
+
+  #paragraphThree {
+    padding: 15px;
   }
 
   .monthsDiv {
@@ -1937,7 +1941,6 @@ footer {
     font-size: 40px;
     text-align: center;
     text-decoration: underline;
-    text-shadow: 1px 1px 1px rgb(119, 119, 119);
   }
 
   #impossibleResetButton {

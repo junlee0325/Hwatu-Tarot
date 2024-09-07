@@ -1364,11 +1364,14 @@ function changeLanguage() {
     document.getElementById("resultCloseButton").textContent = "다시 하기";
     document.getElementById("infoTitle").textContent = "화투점 설명서";
     document.getElementById("paragraphOne").textContent =
-      "화투 패 48장은 1월부터 12월까지 달을 나누고, 각 달에 해당하는 패 4장으로 구성됩니다. 각 달은 운세에 대한 의미를 담고 있습니다.";
-    document.getElementById("paragraphTwo").textContent =
-      "패를 같은 달로 짝지어 화면 상단에 위치한 자리에 차례대로 모으시면 됩니다. 같은 달의 패 4장이 한 더미에 모두 모이면, 그 달이 오늘의 운세를 나타냅니다.";
-    document.getElementById("paragraphThree").textContent =
-      "모든 패가 모아질 때까지 뒷면이 보이는 패를 선택하면 화투 1장씩 뽑힙니다. 선택할 수 없는 패는 투명하게 표시됩니다. 패를 모두 모으는 것이 불가능한 경우도 존재합니다.";
+      "화투 패 48장은 12개월로 달을 나누고, 각 달에 해당하는 패 4장으로 구성됩니다. 각 달과 그 달의 운세의 의미는 하단에 위치합니다. 간단히 말하자면 패를 같은 달로 짝지어 모으시면 됩니다. 같은 달의 패 4장이 한 더미에 모두 모이면, 그 달이 오늘의 운세를 나타냅니다.";
+    document.getElementById("paragraphThree").innerHTML =
+    `<li>같은 달의 패 2개를 선택하면 위에 더미로 이동합니다.</li>
+        <li>사용 불가한 패는 반투명으로 표시됩니다.</li>
+        <li>빛나는 뒷면 패를 선택하면 화투 1장씩 뽑힙니다.</li>
+        <li>덱(deck)이 소진 될때까지 패가 순환 됩니다.</li>
+        <li>모든 48개의 패가 모아지면 결과를 확인합니다.</li>
+        <li>패를 모두 모으는 것이 불가능한 경우도 존재합니다.</li>`;
     document.getElementById("infoCloseButton").textContent = "진행하기";
     document.getElementById("impossibleTitle").textContent =
       "패를 모두 모으는 것이 불가능합니다. 다시 시도 하십시오";
@@ -1401,11 +1404,14 @@ function changeLanguage() {
     document.getElementById("resultCloseButton").textContent = "Play Again";
     document.getElementById("infoTitle").textContent = "Hwatu Tarot Guide";
     document.getElementById("paragraphOne").textContent =
-      "Hwatu card deck has 48 cards. There are 12 kinds corresponding to the months of the year with each kind having 4 cards. Each kind has a meaning similar to tarot.";
-    document.getElementById("paragraphTwo").textContent =
-      "Match the cards into pairs of the same kind until all 48 cards are placed into the four piles above the spread. If all 4 cards of a kind are in the same pile, that kind is your fortune for the day.";
-    document.getElementById("paragraphThree").textContent =
-      "Like you would in a game of Solitaire, click the face-down card to pull out a card. Deck will be cycled until empty. Unusable cards will be half visible. If the spread is impossible to empty, simply try again.";
+      "Hwatu card deck has 48 cards. There are 12 kinds with 4 cards each. Simply put, pair similar cards until the spread is empty. The 12 kinds and their meanings mentioned above are shown below. If all 4 cards of a kind are in a same pile, that kind is your fortune for the day.";
+    document.getElementById("paragraphThree").innerHTML =
+      `<li>Select 2 cards of the same kind to move them to the piles.</li>
+					<li>Unusable cards will be half visible.</li>
+					<li>Press the glowing face-down card to pull out a card.</li>
+					<li>Deck will be cycled until empty.</li>
+          <li>When all 48 cards are in the piles, you can check your result.</li>
+					<li>If the spread is impossible to empty, simply try again.</li>`;
     document.getElementById("infoCloseButton").textContent = "Continue";
     document.getElementById("impossibleTitle").textContent =
       "Unsolvable Spread. Please Try Again";
