@@ -1404,7 +1404,7 @@ function changeLanguage() {
     document.getElementById("resultCloseButton").textContent = "Play Again";
     document.getElementById("infoTitle").textContent = "Hwatu Tarot Guide";
     document.getElementById("paragraphOne").textContent =
-      "Hwatu card deck has 48 cards. There are 12 kinds with 4 cards each. Simply put, pair similar cards until the spread is empty. The 12 kinds and their meanings mentioned above are shown below. If all 4 cards of a kind are in a same pile, that kind is your fortune for the day.";
+      "Hwatu card deck has 48 cards. There are 12 kinds with 4 cards each. Simply put, pair similar cards until the spread is empty. The 12 kinds and their meanings are shown below. If all 4 cards of a kind are in a pile, that kind is part of your fortune for the day.";
     document.getElementById("paragraphThree").innerHTML =
       `<li>Select 2 cards of the same kind to move them to the piles.</li>
 					<li>Unusable cards will be half visible.</li>
