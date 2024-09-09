@@ -1368,7 +1368,7 @@ function changeLanguage() {
     document.getElementById("paragraphThree").innerHTML =
     `<li>같은 달의 패 2개를 선택하면 위에 더미로 이동합니다.</li>
         <li>사용 불가한 패는 반투명으로 표시됩니다.</li>
-        <li>빛나는 뒷면 패를 선택하면 화투 1장씩 뽑힙니다.</li>
+        <li>빛나는 뒷면 패를 선택하면 패가 1장씩 나옵니다.</li>
         <li>덱(deck)이 소진 될때까지 패가 순환 됩니다.</li>
         <li>모든 48개의 패가 모아지면 결과를 확인합니다.</li>
         <li>패를 모두 모으는 것이 불가능한 경우도 존재합니다.</li>`;
