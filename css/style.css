@@ -683,6 +683,13 @@ footer {
   }
 
   /* MISC */
+  #createdBy {
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin: 0;
+    color: rgb(77, 77, 77);
+  }
+
   .greyed {
     opacity: 50%;
   }
@@ -1324,6 +1331,13 @@ footer {
   }
 
   /* MISC */
+  #createdBy {
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin: 0;
+    color: rgb(77, 77, 77);
+  }
+
   .greyed {
     opacity: 50%;
   }
@@ -1979,6 +1993,13 @@ footer {
   }
 
   /* MISC */
+  #createdBy {
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin: 0;
+    color: rgb(77, 77, 77);
+  }
+
   .greyed {
     opacity: 50%;
   }
