@@ -685,9 +685,21 @@ footer {
   /* MISC */
   #createdBy {
     font-size: 12px;
+    margin: 0;
+    color: rgb(77, 77, 77);
+  }
+
+  #infoCopyright {
+    font-size: 12px;
     padding-bottom: 5px;
     margin: 0;
     color: rgb(77, 77, 77);
+  }
+
+  #titleCopyright {
+    font-size: 10px;
+    margin: 0;
+    color: rgb(255, 255, 255);
   }
 
   .greyed {
@@ -1336,6 +1348,19 @@ footer {
     padding-bottom: 5px;
     margin: 0;
     color: rgb(77, 77, 77);
+  }
+
+  #infoCopyright {
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin: 0;
+    color: rgb(77, 77, 77);
+  }
+
+  #titleCopyright {
+    font-size: 12px;
+    margin: 0;
+    color: rgb(255, 255, 255);
   }
 
   .greyed {
@@ -1995,9 +2020,21 @@ footer {
   /* MISC */
   #createdBy {
     font-size: 15px;
+    margin: 0;
+    color: rgb(77, 77, 77);
+  }
+
+  #infoCopyright {
+    font-size: 15px;
     padding-bottom: 5px;
     margin: 0;
     color: rgb(77, 77, 77);
+  }
+
+  #titleCopyright {
+    font-size: 12px;
+    margin: 0;
+    color: rgb(255, 255, 255);
   }
 
   .greyed {
